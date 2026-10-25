@@ -1,0 +1,30 @@
+---
+import StoreButton from './store-button.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+const t = useTranslations(locale);
+
+const appStoreUrl = import.meta.env.PUBLIC_APP_STORE_URL || undefined;
+const playStoreUrl = import.meta.env.PUBLIC_PLAY_STORE_URL || undefined;
+---
+
+<div class:list={['flex flex-wrap gap-3', className]}>
+  <StoreButton
+    store={t('store.appStore')}
+    href={appStoreUrl}
+    soonLabel={t('store.soon')}
+    availableLabel={t('store.availableOn')}
+  />
+  <StoreButton
+    store={t('store.googlePlay')}
+    href={playStoreUrl}
+    soonLabel={t('store.soon')}
+    availableLabel={t('store.availableOn')}
+  />
+</div>

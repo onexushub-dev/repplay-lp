@@ -1,0 +1,20 @@
+---
+/**
+ * Phone frame. Renders a real screenshot when `image` is given (public/screens/<name>.<locale>.png, produced by the
+ * screenshot automation), and otherwise the slot, a faithful HTML stand-in of the app screen.
+ */
+interface Props {
+  image?: string;
+  alt?: string;
+  tilt?: boolean;
+  class?: string;
+}
+
+const { image, alt = '', tilt = false, class: className } = Astro.props;
+---
+
+<div class:list={['phone', tilt && 'phone--tilt', className]} role={image ? undefined : 'img'} aria-label={image ? undefined : alt}>
+  <div class="phone__screen">
+    {image ? <img src={image} alt={alt} width="1170" height="2532" loading="lazy" decoding="async" /> : <slot />}
+  </div>
+</div>

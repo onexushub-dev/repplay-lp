@@ -1,0 +1,48 @@
+---
+interface Props {
+  code: 'br' | 'us';
+  class?: string;
+}
+
+const { code, class: className } = Astro.props;
+
+// US flag: 13 stripes on a 22x16 box, so each stripe is 16/13 tall; red stripes sit at the even positions.
+const stripe = 16 / 13;
+const redStripes = Array.from({ length: 7 }, (_, i) => i * 2 * stripe);
+const stars = Array.from({ length: 3 }, (_, row) => Array.from({ length: 4 }, (_, col) => ({
+  x: 1.5 + col * 2.2 + (row % 2) * 1.1,
+  y: 1.5 + row * 2.4,
+}))).flat();
+---
+
+<svg
+  viewBox="0 0 22 16"
+  width="22"
+  height="16"
+  role="img"
+  aria-hidden="true"
+  focusable="false"
+  class:list={['shrink-0 rounded-[3px]', className]}
+>
+  {
+    code === 'br' ? (
+      <>
+        <rect width="22" height="16" fill="#009c3b" />
+        <polygon points="11,1.6 20,8 11,14.4 2,8" fill="#ffdf00" />
+        <circle cx="11" cy="8" r="3.6" fill="#002776" />
+        <path d="M7.6 7.1c2.4-.8 5.2-.4 6.9 1.4" stroke="#fff" stroke-width=".7" fill="none" />
+      </>
+    ) : (
+      <>
+        <rect width="22" height="16" fill="#fff" />
+        {redStripes.map((y) => (
+          <rect y={y} width="22" height={stripe} fill="#b22234" />
+        ))}
+        <rect width="9.2" height={7 * stripe} fill="#3c3b6e" />
+        {stars.map((s) => (
+          <circle cx={s.x} cy={s.y} r=".45" fill="#fff" />
+        ))}
+      </>
+    )
+  }
+</svg>

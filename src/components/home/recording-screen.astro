@@ -1,0 +1,42 @@
+---
+import PhoneVideo from './phone-video.astro';
+import type { HomeCopy } from '../../i18n/home';
+
+interface Props {
+  copy: HomeCopy['hero']['screen'];
+}
+
+const { copy } = Astro.props;
+---
+
+<div class="rec" aria-hidden="true">
+  <PhoneVideo name="beach-tennis-hero" eager />
+
+  <div class="rec__top">
+    <span class="rec__pill"><span class="rec__dot"></span>{copy.rec}</span>
+    <span class="rec__pill">12:08</span>
+  </div>
+
+  <div class="rec__count">
+    <span class="rec__count-label">{copy.plays}</span>
+    <span class="rec__count-num">
+      <span class="old">02</span>
+      <span class="new">03</span>
+    </span>
+  </div>
+
+  <div class="rec__flash"></div>
+
+  <div class="rec__toast">
+    <strong>{copy.savedTitle}</strong>
+    <span>{copy.savedVia}</span>
+  </div>
+
+  <div class="rec__bottom">
+    <div class="rec__buffer">
+      <span>{copy.buffer}</span>
+      <div class="rec__buffer-track"><div class="rec__buffer-fill"></div></div>
+    </div>
+    <span class="rec__hint">{copy.hint}</span>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+---
+import { homeCopy } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].plans;
+
+type Tone = 'plain' | 'lima' | 'oliva';
+
+const plans = [
+  { plan: c.free, tone: 'plain' as Tone },
+  { plan: c.pass, tone: 'plain' as Tone },
+  { plan: c.proMonthly, tone: 'lima' as Tone },
+  { plan: c.proYearly, tone: 'oliva' as Tone },
+];
+
+// Lima and Oliva cards swap the text color to keep the contrast (Ink on Lima, white on Oliva).
+const card: Record<Tone, string> = {
+  plain: 'border-line bg-surface/50 border',
+  lima: 'bg-lima text-ink border-lima border',
+  oliva: 'bg-oliva border-oliva border text-white',
+};
+const check: Record<Tone, string> = {
+  plain: 'text-lima',
+  lima: 'text-ink',
+  oliva: 'text-lima',
+};
+---
+
+<section id="plans" class="mx-auto max-w-6xl scroll-mt-8 px-4 py-16 sm:px-6 sm:py-24">
+  <div class="reveal max-w-3xl">
+    <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+    <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
+  </div>
+
+  <div class="mt-10 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      plans.map(({ plan, tone }) => (
+        <article class:list={['reveal relative flex flex-col gap-5 rounded-2xl p-5', card[tone]]}>
+          {'badge' in plan && (
+            <span
+              class:list={[
+                'absolute -top-3 right-4 rounded-full px-3 py-1 text-[0.68rem] font-extrabold tracking-[0.12em] uppercase',
+                tone === 'lima' ? 'bg-ink text-lima' : 'bg-lima text-ink',
+              ]}
+            >
+              {plan.badge}
+            </span>
+          )}
+          <header>
+            <h3 class="text-2xl font-extrabold">{plan.name}</h3>
+            <p class="mt-2 flex items-baseline gap-2">
+              <span class="font-display text-4xl font-extrabold">{plan.price}</span>
+              <span class:list={['text-xs font-bold', tone === 'plain' ? 'text-muted' : 'opacity-80']}>{plan.period}</span>
+            </p>
+            {'alt' in plan && <p class="mt-1.5 text-xs font-semibold opacity-85">{plan.alt}</p>}
+          </header>
+          <ul class="grid gap-2.5 text-sm">
+            {plan.items.map((item) => (
+              <li class:list={['flex gap-2.5 leading-5', tone === 'plain' && 'text-paper/85', tone !== 'plain' && 'font-semibold']}>
+                <svg viewBox="0 0 24 24" class:list={['mt-0.5 size-4 shrink-0', check[tone]]} fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m5 12.5 4.5 4.5L19 7.5" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+
+  <p class="text-muted reveal mt-6 max-w-3xl text-xs leading-5 sm:text-sm">{c.note}</p>
+</section>

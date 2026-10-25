@@ -1,0 +1,28 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import LanguageSwitcher from './language-switcher.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<header class="border-line border-b">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+    <a href={getRelativeLocaleUrl(locale, '')} aria-label={t('a11y.home')}>
+      <img
+        src="/brand/repplay-horizontal-fundo-escuro.svg"
+        alt="Repplay"
+        width="140"
+        height="32"
+        class="h-8 w-auto"
+      />
+    </a>
+    <LanguageSwitcher locale={locale} slug={slug} />
+  </div>
+</header>

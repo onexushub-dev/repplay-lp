@@ -1,0 +1,56 @@
+---
+import PhoneVideo from './phone-video.astro';
+import type { HomeCopy } from '../../i18n/home';
+
+interface Props {
+  copy: HomeCopy['editor']['screen'];
+}
+
+const { copy } = Astro.props;
+---
+
+<div class="edit" aria-hidden="true">
+  <div class="edit__stage">
+    <PhoneVideo name="footvolley-editor" />
+    <div class="edit__focus"><i></i></div>
+  </div>
+
+  <div class="edit__panel">
+    <div class="edit__tools">
+      <div class="edit__tool">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"></path>
+        </svg>
+        {copy.cut}
+      </div>
+      <div class="edit__tool">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 14l4-4"></path><path d="M3.3 16a9 9 0 1 1 17.4 0"></path>
+        </svg>
+        {copy.speed}
+      </div>
+      <div class="edit__tool edit__tool--on">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path><circle cx="12" cy="12" r="2.4"></circle>
+        </svg>
+        {copy.focus}
+      </div>
+      <div class="edit__tool">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5M11 8v6M8 11h6"></path>
+        </svg>
+        {copy.zoom}
+      </div>
+    </div>
+
+    <div class="edit__trim">
+      <div class="edit__window"></div>
+      <div class="edit__playhead"></div>
+    </div>
+
+    <div class="edit__actions">
+      <div class="edit__btn">{copy.save}</div>
+      <div class="edit__btn edit__btn--primary">{copy.share}</div>
+    </div>
+  </div>
+</div>

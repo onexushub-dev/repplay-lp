@@ -1,0 +1,46 @@
+---
+import Phone from './phone.astro';
+import EditorScreen from './editor-screen.astro';
+import { homeCopy } from '../../i18n/home';
+import { screens } from '../../data/screens';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].editor;
+---
+
+<section id="editor" class="mx-auto max-w-6xl scroll-mt-8 px-4 py-16 sm:px-6 sm:py-24">
+  <div class="grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="reveal flex justify-center lg:justify-start">
+      <Phone alt={c.title} image={screens.editor?.[locale]}>
+        <EditorScreen copy={c.screen} />
+      </Phone>
+    </div>
+
+    <div>
+      <p class="text-lima reveal text-xs font-bold tracking-[0.24em] uppercase sm:text-sm">{c.eyebrow}</p>
+      <h2 class="reveal mt-3 text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+      <p class="text-muted reveal mt-5 max-w-lg text-lg">{c.subtitle}</p>
+
+      <ul class="mt-10 grid gap-6">
+        {
+          c.items.map((item) => (
+            <li class="reveal border-line grid grid-cols-[2rem_1fr] gap-4 border-t pt-6">
+              <svg viewBox="0 0 24 24" class="text-lima mt-1 size-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12.5 4.5 4.5L19 7.5" />
+              </svg>
+              <div>
+                <h3 class="text-2xl font-extrabold">{item.title}</h3>
+                <p class="text-paper/75 mt-1 leading-7">{item.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

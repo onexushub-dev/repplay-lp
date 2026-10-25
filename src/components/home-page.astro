@@ -1,0 +1,37 @@
+---
+import '../styles/home.css';
+import BaseLayout from '../layouts/base-layout.astro';
+import Hero from './home/hero.astro';
+import Facts from './home/facts.astro';
+import HowItWorks from './home/how-it-works.astro';
+import Triggers from './home/triggers.astro';
+import Editor from './home/editor.astro';
+import Privacy from './home/privacy.astro';
+import Sports from './home/sports.astro';
+import Plans from './home/plans.astro';
+import Faq from './home/faq.astro';
+import FinalCta from './home/final-cta.astro';
+import StickyCta from './home/sticky-cta.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<BaseLayout locale={locale} title={t('meta.homeTitle')} description={t('meta.homeDescription')}>
+  <Hero locale={locale} />
+  <Facts locale={locale} />
+  <HowItWorks locale={locale} />
+  <Triggers locale={locale} />
+  <Editor locale={locale} />
+  <Privacy locale={locale} />
+  <Sports locale={locale} />
+  <Plans locale={locale} />
+  <Faq locale={locale} />
+  <FinalCta locale={locale} />
+  <StickyCta locale={locale} />
+</BaseLayout>

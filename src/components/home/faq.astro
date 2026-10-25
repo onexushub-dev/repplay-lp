@@ -1,0 +1,33 @@
+---
+import { homeCopy } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].faq;
+---
+
+<section id="faq" class="border-line bg-surface/30 scroll-mt-8 border-y">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[0.7fr_1.3fr]">
+    <h2 class="reveal text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+
+    <div class="faq border-line divide-line divide-y border-y">
+      {
+        c.items.map((item) => (
+          <details class="group py-1">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 text-lg font-bold select-none">
+              {item.q}
+              <svg viewBox="0 0 24 24" class="faq-plus text-lima size-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </summary>
+            <p class="text-paper/80 max-w-2xl pb-6 leading-7">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

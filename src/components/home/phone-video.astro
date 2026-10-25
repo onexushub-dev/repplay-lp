@@ -1,0 +1,55 @@
+---
+/**
+ * Looping muted video that fills a phone screen, standing in for the camera picture. The files live in public/media
+ * (an MP4 and a WebP poster per clip), cropped to the shape of the screen they fill. The shared script below only
+ * plays a clip while it is on screen and leaves it paused for visitors who prefer reduced motion.
+ */
+interface Props {
+  /** File name without extension, e.g. "beach-tennis-hero". */
+  name: string;
+  /** Load the video right away (the hero) or only its first frame (anything below the fold). */
+  eager?: boolean;
+}
+
+const { name, eager = false } = Astro.props;
+---
+
+<video
+  class="scene-video"
+  poster={`/media/${name}.webp`}
+  autoplay
+  muted
+  loop
+  playsinline
+  preload={eager ? 'auto' : 'metadata'}
+  disablepictureinpicture
+  disableremoteplayback
+  aria-hidden="true"
+  tabindex="-1"
+>
+  <source src={`/media/${name}.mp4`} type="video/mp4" />
+</video>
+
+<script>
+  const videos = document.querySelectorAll<HTMLVideoElement>('video.scene-video');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (reduceMotion.matches) {
+    videos.forEach((video) => {
+      video.removeAttribute('autoplay');
+      video.pause();
+    });
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) video.play().catch(() => {});
+          else video.pause();
+        });
+      },
+      { threshold: 0.25 },
+    );
+    videos.forEach((video) => observer.observe(video));
+  }
+</script>

@@ -1,0 +1,37 @@
+---
+import { homeCopy } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].how;
+---
+
+<section id="how" class="mx-auto max-w-6xl scroll-mt-8 px-4 py-16 sm:px-6 sm:py-24">
+  <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+    <div class="reveal lg:sticky lg:top-24 lg:self-start">
+      <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+      <p class="text-muted mt-5 max-w-sm text-lg">{c.subtitle}</p>
+    </div>
+
+    <ol class="relative grid gap-10">
+      <span class="bg-line absolute top-3 bottom-3 left-[1.875rem] w-px sm:left-[2.75rem]" aria-hidden="true">
+        <span class="steps-line bg-lima block h-full w-full"></span>
+      </span>
+      {
+        c.steps.map((step, i) => (
+          <li class="reveal relative grid grid-cols-[3.75rem_1fr] items-start gap-4 sm:grid-cols-[5.5rem_1fr] sm:gap-6">
+            <span class="step-num bg-ink relative z-10 py-2 text-center">{String(i + 1).padStart(2, '0')}</span>
+            <div class="pt-1 sm:pt-3">
+              <h3 class="text-3xl font-extrabold sm:text-4xl">{step.title}</h3>
+              <p class="text-paper/80 mt-2 max-w-md text-base leading-7 sm:text-lg">{step.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
