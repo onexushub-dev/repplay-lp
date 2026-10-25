@@ -1,0 +1,69 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { homeCopy } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].privacy;
+
+// 30 ticks = the rolling window of recent moments. The last few are the play the user saved (they never fade).
+const TICKS = 30;
+const KEPT_FROM = 22;
+const KEPT_TO = 25;
+const ticks = Array.from({ length: TICKS }, (_, i) => ({
+  i,
+  angle: (360 / TICKS) * i,
+  kept: i >= KEPT_FROM && i <= KEPT_TO,
+}));
+---
+
+<section id="privacy" class="mx-auto max-w-6xl scroll-mt-8 px-4 py-16 sm:px-6 sm:py-24">
+  <div class="border-line bg-surface/60 grid items-center gap-12 rounded-[1.75rem] border p-6 sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+    <div class="reveal mx-auto w-full max-w-[15rem] sm:max-w-[17rem]">
+      <svg viewBox="0 0 240 240" role="img" aria-label={c.ring.label} class="w-full">
+        {
+          ticks.map((t) => (
+            <line
+              class:list={['tick', t.kept && 'tick--keep']}
+              style={`--i:${t.i}`}
+              x1="120"
+              y1="22"
+              x2="120"
+              y2={t.kept ? '44' : '40'}
+              transform={`rotate(${t.angle} 120 120)`}
+            />
+          ))
+        }
+        <text x="120" y="132" text-anchor="middle" fill="#f3ede1" font-family="var(--font-barlow), sans-serif" font-weight="800" font-size="46">{c.ring.center.toUpperCase()}</text>
+        <text x="120" y="160" text-anchor="middle" fill="#d6f23f" font-family="var(--font-manrope), sans-serif" font-weight="700" font-size="10" letter-spacing="1.6">
+          ● {c.ring.kept.toUpperCase()}
+        </text>
+      </svg>
+    </div>
+
+    <div>
+      <p class="text-lima reveal text-xs font-bold tracking-[0.24em] uppercase sm:text-sm">{c.eyebrow}</p>
+      <h2 class="reveal mt-3 text-4xl font-extrabold sm:text-5xl">{c.title}</h2>
+      <p class="text-paper/80 reveal mt-5 max-w-xl text-lg leading-8">{c.body}</p>
+      <ul class="mt-7 grid gap-3">
+        {
+          c.bullets.map((b) => (
+            <li class="reveal flex items-start gap-3 font-semibold">
+              <svg viewBox="0 0 24 24" class="text-lima mt-0.5 size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12.5 4.5 4.5L19 7.5" />
+              </svg>
+              {b}
+            </li>
+          ))
+        }
+      </ul>
+      <a href={getRelativeLocaleUrl(locale, 'privacy')} class="text-lima mt-8 inline-block font-bold underline underline-offset-4">
+        {c.link} →
+      </a>
+    </div>
+  </div>
+</section>

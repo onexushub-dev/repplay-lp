@@ -1,0 +1,81 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import Flag from './flag.astro';
+import { localeMeta, locales, useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  /** Path of the page without the locale prefix, so the switch lands on the same page in the other language. */
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+const t = useTranslations(locale);
+const current = localeMeta[locale];
+---
+
+<details class="group relative" data-lang-menu>
+  <summary
+    aria-label={`${t('lang.label')}: ${current.label}`}
+    class="border-line hover:border-lima flex cursor-pointer list-none items-center gap-2 rounded-full border py-1.5 pr-3 pl-3 text-sm font-semibold transition-colors select-none [&::-webkit-details-marker]:hidden"
+  >
+    <Flag code={current.flag} />
+    <span>{current.label}</span>
+    <svg
+      viewBox="0 0 12 12"
+      width="12"
+      height="12"
+      aria-hidden="true"
+      class="text-muted transition-transform group-open:rotate-180"
+    >
+      <path d="M2 4.2 6 8l4-3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </summary>
+
+  <ul class="bg-surface border-line absolute right-0 z-40 mt-2 w-48 rounded-xl border p-1 shadow-xl shadow-black/50">
+    {
+      locales.map((l) => {
+        const meta = localeMeta[l];
+        const isCurrent = l === locale;
+        return (
+          <li>
+            <a
+              href={getRelativeLocaleUrl(l, slug)}
+              hreflang={l}
+              lang={l}
+              aria-current={isCurrent ? 'true' : undefined}
+              class:list={[
+                'hover:bg-ink flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold',
+                isCurrent && 'text-lima',
+              ]}
+            >
+              <Flag code={meta.flag} />
+              <span class="flex-1">{meta.label}</span>
+              {isCurrent && (
+                <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+                  <path d="m2.2 6.4 2.4 2.4 5.2-5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              )}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</details>
+
+<script>
+  // Progressive enhancement: the menu works without JS; this only closes it on outside click and Escape.
+  const menu = document.querySelector<HTMLDetailsElement>('[data-lang-menu]');
+  if (menu) {
+    document.addEventListener('click', (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false;
+        menu.querySelector('summary')?.focus();
+      }
+    });
+  }
+</script>

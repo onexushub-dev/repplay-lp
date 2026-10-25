@@ -1,0 +1,30 @@
+---
+import { getEntry, render } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import BaseLayout from '../layouts/base-layout.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  slug: 'privacy' | 'terms';
+}
+
+const { locale, slug } = Astro.props;
+const t = useTranslations(locale);
+
+const entry = await getEntry('legal', `${locale.toLowerCase()}/${slug}`);
+if (!entry) throw new Error(`Missing legal text: ${locale}/${slug}`);
+const { Content } = await render(entry);
+
+const updated = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(entry.data.updated);
+---
+
+<BaseLayout locale={locale} title={`${entry.data.title} | Repplay`} description={entry.data.description} slug={slug}>
+  <article class="legal mx-auto max-w-3xl px-4 pt-14 pb-24 sm:px-6 sm:pt-20">
+    <a href={getRelativeLocaleUrl(locale, '')} class="text-muted hover:text-lima text-sm font-semibold no-underline">
+      ← {t('legal.backHome')}
+    </a>
+    <Content />
+    <p class="text-muted mt-12 text-sm">{t('legal.updated')}: {updated}</p>
+  </article>
+</BaseLayout>

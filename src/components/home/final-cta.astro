@@ -1,0 +1,29 @@
+---
+import StoreButtons from '../store-buttons.astro';
+import { homeCopy } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].cta;
+---
+
+<section id="download" class="hero-glow grain relative isolate scroll-mt-8 overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 sm:py-28">
+    <img
+      src="/brand/repplay-simbolo-fundo-escuro.svg"
+      alt=""
+      width="72"
+      height="72"
+      class="reveal mx-auto h-12 w-auto"
+      loading="lazy"
+    />
+    <h2 class="reveal mx-auto mt-6 max-w-3xl text-4xl font-extrabold sm:text-6xl lg:text-7xl">{c.title}</h2>
+    <p class="text-paper/80 reveal mx-auto mt-6 max-w-xl text-lg leading-8">{c.subtitle}</p>
+    <StoreButtons locale={locale} class="reveal mt-10 justify-center" />
+    <p class="text-muted reveal mt-5 text-sm font-semibold">{c.legal}</p>
+  </div>
+</section>

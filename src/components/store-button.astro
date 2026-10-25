@@ -1,0 +1,33 @@
+---
+interface Props {
+  store: string;
+  /** Store listing URL. While empty (app still in review) the button renders as a disabled "coming soon" badge. */
+  href?: string;
+  soonLabel: string;
+  availableLabel: string;
+}
+
+const { store, href, soonLabel, availableLabel } = Astro.props;
+const base = 'inline-flex min-h-[52px] items-center gap-3 rounded-2xl px-5 py-2 text-left';
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class:list={[base, 'bg-lima text-ink font-bold transition-transform hover:-translate-y-0.5']}
+    >
+      <span class="flex flex-col leading-tight">
+        <span class="text-xs font-semibold opacity-80">{availableLabel}</span>
+        <span class="text-lg">{store}</span>
+      </span>
+    </a>
+  ) : (
+    <span class:list={[base, 'bg-surface border-line text-muted border']} aria-disabled="true">
+      <span class="flex flex-col leading-tight">
+        <span class="text-xs font-semibold">{soonLabel}</span>
+        <span class="text-lg font-bold">{store}</span>
+      </span>
+    </span>
+  )
+}

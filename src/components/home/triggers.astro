@@ -1,0 +1,40 @@
+---
+import TriggerIcon from './trigger-icon.astro';
+import { homeCopy, type TriggerKey } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].triggers;
+const order: TriggerKey[] = ['tap', 'gesture', 'voice', 'watch', 'bluetooth', 'phone'];
+---
+
+<section id="triggers" class="border-line bg-surface/30 scroll-mt-8 border-y">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <div class="reveal max-w-3xl">
+      <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+      <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
+    </div>
+
+    <ul class="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+      {
+        order.map((key) => {
+          const item = c.items[key];
+          return (
+            <li class="tile tile--row reveal">
+              <TriggerIcon name={key} />
+              <div class="flex flex-col gap-1.5">
+                <span class:list={['tag', item.pro && 'tag--pro']}>{item.tag}</span>
+                <h3 class="text-2xl font-extrabold">{item.title}</h3>
+                <p class="text-paper/75 text-sm leading-6">{item.body}</p>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

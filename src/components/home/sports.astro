@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import beachTennis from '../../assets/sports/beach-tennis.jpg';
+import footvolley from '../../assets/sports/footvolley.jpg';
+import beachVolleyball from '../../assets/sports/beach-volleyball.jpg';
+import anySport from '../../assets/sports/any-sport.jpg';
+import { homeCopy, type SportKey } from '../../i18n/home';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].sports;
+
+// Where each photo is cropped inside the 4:5 card, so the athlete stays in frame.
+const photos: Record<SportKey, { src: ImageMetadata; position: string }> = {
+  beachTennis: { src: beachTennis, position: '50% 22%' },
+  footvolley: { src: footvolley, position: '50% 38%' },
+  beachVolley: { src: beachVolleyball, position: '42% 40%' },
+  any: { src: anySport, position: '58% 30%' },
+};
+const order: SportKey[] = ['beachTennis', 'footvolley', 'beachVolley', 'any'];
+---
+
+<section id="sports" class="border-line bg-surface/30 scroll-mt-8 border-y">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <div class="reveal max-w-3xl">
+      <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+      <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
+    </div>
+
+    <ul class="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      {
+        order.map((key) => {
+          const photo = photos[key];
+          const item = c.items[key];
+          return (
+            <li class="sport-card reveal border-line group relative isolate aspect-[4/5] overflow-hidden rounded-2xl border">
+              <Image
+                src={photo.src}
+                alt={item.alt}
+                widths={[360, 560, 800]}
+                sizes="(min-width: 1024px) 22vw, 46vw"
+                format="webp"
+                quality={72}
+                loading="lazy"
+                class="sport-card__img absolute inset-0 h-full w-full object-cover"
+                style={`object-position:${photo.position}`}
+              />
+              <div class="from-ink via-ink/55 absolute inset-0 bg-gradient-to-t to-transparent to-60%" />
+              <div class="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                <h3 class="text-2xl font-extrabold sm:text-3xl">{item.title}</h3>
+                <p class="text-paper/80 mt-1.5 text-xs leading-5 sm:text-sm sm:leading-6">{item.body}</p>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <p class="text-muted mt-4 text-xs">{c.credit}</p>
+  </div>
+</section>

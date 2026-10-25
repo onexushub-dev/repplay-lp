@@ -1,0 +1,42 @@
+---
+import Phone from './phone.astro';
+import RecordingScreen from './recording-screen.astro';
+import StoreButtons from '../store-buttons.astro';
+import { homeCopy } from '../../i18n/home';
+import { screens } from '../../data/screens';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].hero;
+
+// "Seu lance. De novo." -> two lines, the second one in Lima.
+const [first, ...rest] = c.title.split('. ');
+const second = rest.join('. ');
+---
+
+<section class="hero-glow grain relative isolate overflow-hidden">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-10 pb-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pt-16 lg:pb-20">
+    <div>
+      <p class="text-lima text-xs font-bold tracking-[0.24em] uppercase sm:text-sm">{c.eyebrow}</p>
+      <h1 class="hero-title mt-5 font-extrabold">
+        <span class="block">{first}.</span>
+        <span class="accent block">{second}</span>
+      </h1>
+      <p class="text-paper/80 mt-5 max-w-md text-base leading-7 sm:text-lg sm:leading-8">{c.subtitle}</p>
+      <StoreButtons locale={locale} class="mt-7" />
+      <p class="text-muted mt-4 text-sm font-semibold">{c.note}</p>
+    </div>
+
+    <div class="flex justify-center lg:justify-end">
+      <div class="float">
+        <Phone tilt alt={c.title} image={screens.recording?.[locale]}>
+          <RecordingScreen copy={c.screen} />
+        </Phone>
+      </div>
+    </div>
+  </div>
+</section>
