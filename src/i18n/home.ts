@@ -1,6 +1,7 @@
 import type { Locale } from './ui';
 import { PLAN_PRICES as P } from '../data/plans';
 
+export type TestimonialKey = 'marcus' | 'lorenzo' | 'victor';
 export type TriggerKey = 'tap' | 'gesture' | 'voice' | 'watch' | 'bluetooth' | 'phone';
 export type SportKey =
   | 'beachTennis'
@@ -65,6 +66,11 @@ export interface HomeCopy {
     credit: string;
     nav: { region: string; prev: string; next: string; slide: string };
     items: Record<SportKey, { title: string; body: string; alt: string }>;
+  };
+  testimonials: {
+    title: string;
+    subtitle: string;
+    items: Record<TestimonialKey, { tag: string; quote: string }>;
   };
   plans: {
     title: string;
@@ -257,6 +263,24 @@ const ptBR: HomeCopy = {
         title: 'Qualquer esporte',
         body: 'Se tem esporte, tem lance. É só prender o celular e jogar.',
         alt: '',
+      },
+    },
+  },
+  testimonials: {
+    title: 'Quem já testou conta.',
+    subtitle: 'O que quem jogou com o Repplay mais gostou.',
+    items: {
+      marcus: {
+        tag: 'Apple Watch',
+        quote: 'Que app bom, mudou o meu jeito de jogar. E salvar o lance pelo Apple Watch é demais.',
+      },
+      lorenzo: {
+        tag: 'Editar e postar',
+        quote: 'Que ideia genial, uso em todo jogo. Editar e postar é fácil demais.',
+      },
+      victor: {
+        tag: 'Memória livre',
+        quote: 'Esse app é show, grava tudo e eu não perco lance nenhum. E a memória do celular nunca enche.',
       },
     },
   },
@@ -528,6 +552,24 @@ const en: HomeCopy = {
         title: 'Any sport',
         body: 'If there is a sport, there is a play. Just mount the phone and play.',
         alt: '',
+      },
+    },
+  },
+  testimonials: {
+    title: 'Hear it from people who tested it.',
+    subtitle: 'What players liked most about Repplay.',
+    items: {
+      marcus: {
+        tag: 'Apple Watch',
+        quote: 'Such a great app, it changed how I play. And saving the play from my Apple Watch is amazing.',
+      },
+      lorenzo: {
+        tag: 'Edit and post',
+        quote: 'Genius idea, I use it every game. Editing and posting is ridiculously easy.',
+      },
+      victor: {
+        tag: 'Free storage',
+        quote: 'This app is awesome, it records everything and I never miss a play. And my phone storage never fills up.',
       },
     },
   },
