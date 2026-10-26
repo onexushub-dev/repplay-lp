@@ -779,7 +779,7 @@
   stroke-width: 3;
   stroke-linecap: round;
   animation: tick-sweep 6s linear infinite;
-  animation-delay: calc(var(--i) * -0.2s);
+  animation-delay: calc(var(--i) * 0.2s - 6s);
 }
 
 @keyframes keep-pulse {
@@ -799,46 +799,102 @@
   animation-delay: 0s;
 }
 
-/* ---------- Courts ---------- */
-/* The ball crosses the court (x, linear, back and forth) while bouncing in an arc (y, once per crossing). */
-@keyframes court-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(132px);
-  }
+/* ---------- Sports carousel ---------- */
+.sports-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-inline: max(1rem, calc((100% - 72rem) / 2 + 1.5rem));
+  scroll-padding-inline: max(1rem, calc((100% - 72rem) / 2 + 1.5rem));
+  padding-block: 0.25rem;
+  cursor: grab;
 }
 
-@keyframes court-y {
-  0% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
-  }
-  50% {
-    transform: translateY(-34px);
-    animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.3);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.sports-track::-webkit-scrollbar {
+  display: none;
 }
 
-.court-x {
-  animation: court-x 1.7s linear infinite alternate;
+.sports-track.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
 }
 
-.court-y {
-  animation: court-y 1.7s linear infinite;
+.sport-slide {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 clamp(13.5rem, 60vw, 17.5rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  background: var(--color-surface);
+  transition: border-color 0.25s;
 }
 
-.sport-card__img {
+.sport-slide:hover {
+  border-color: var(--color-lima);
+}
+
+.sport-slide__img {
+  pointer-events: none;
+  user-select: none;
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.sport-card:hover .sport-card__img,
-.sport-card:focus-within .sport-card__img {
+.sport-slide:hover .sport-slide__img {
   transform: scale(1.06);
+}
+
+.sport-slide--any {
+  background:
+    radial-gradient(90% 60% at 80% 0%, rgb(214 242 63 / 0.28), transparent 70%),
+    linear-gradient(160deg, #1b1d18, #0b0b09);
+  border-color: rgb(214 242 63 / 0.5);
+}
+
+.carousel-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  color: var(--color-paper);
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  border-color: var(--color-lima);
+  color: var(--color-lima);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.sports-progress {
+  position: relative;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-line);
+}
+
+.sports-progress > span {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 30%;
+  border-radius: 999px;
+  background: var(--color-lima);
 }
 
 /* ---------- Sticky mobile CTA ---------- */

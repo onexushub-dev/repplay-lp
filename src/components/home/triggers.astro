@@ -9,7 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const c = homeCopy[locale].triggers;
-const order: TriggerKey[] = ['tap', 'gesture', 'voice', 'watch', 'bluetooth', 'phone'];
+const order: TriggerKey[] = ['tap', 'gesture', 'voice', 'phone', 'bluetooth', 'watch'];
 ---
 
 <section id="triggers" class="border-line bg-surface/30 scroll-mt-8 border-y">

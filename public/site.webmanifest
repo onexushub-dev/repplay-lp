@@ -1,9 +1,13 @@
 {
   "name": "Repplay",
   "short_name": "Repplay",
+  "description": "App de replay para esportes: grave o jogo e guarde só o lance.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
   "background_color": "#0B0B09",
   "theme_color": "#0B0B09",
-  "display": "standalone",
   "icons": [
     {
       "src": "icon-192.png",

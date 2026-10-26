@@ -11,9 +11,12 @@ export const localeMeta: Record<Locale, { label: string; flag: 'br' | 'us' }> = 
 export const ui = {
   'pt-BR': {
     'meta.siteName': 'Repplay',
-    'meta.homeTitle': 'Repplay: seu lance. De novo.',
+    'meta.homeTitle': 'Repplay: seu lance. De novo. | App de replay para esportes',
     'meta.homeDescription':
-      'Grave o jogo inteiro e guarde só o lance. O Repplay usa o celular preso na grade para salvar a jogada que você escolher, sem cadastro e sem enviar nada para a nuvem.',
+      'App de replay para esportes: o celular grava o jogo todo e guarda só o lance que você salvar. Sem cadastro e sem enviar nada para a nuvem.',
+    'meta.ogImageAlt': 'Repplay: seu lance. De novo.',
+    'notFound.title': 'Página não encontrada',
+    'notFound.body': 'O endereço que você abriu não existe ou mudou de lugar.',
     'a11y.skip': 'Pular para o conteúdo',
     'a11y.home': 'Repplay, página inicial',
     'nav.privacy': 'Privacidade',
@@ -32,9 +35,12 @@ export const ui = {
   },
   en: {
     'meta.siteName': 'Repplay',
-    'meta.homeTitle': 'Repplay: your play. Again.',
+    'meta.homeTitle': 'Repplay: your play. Again. | Instant replay app for sports',
     'meta.homeDescription':
-      'Record the whole game and keep only the play. Repplay turns the phone on the fence into an instant replay of the moment you pick, with no sign-up and nothing sent to the cloud.',
+      'Instant replay app for sports: your phone records the whole game and keeps only the play you save. No sign-up, nothing sent to the cloud.',
+    'meta.ogImageAlt': 'Repplay: your play. Again.',
+    'notFound.title': 'Page not found',
+    'notFound.body': 'The address you opened does not exist or has moved.',
     'a11y.skip': 'Skip to content',
     'a11y.home': 'Repplay, home page',
     'nav.privacy': 'Privacy',
