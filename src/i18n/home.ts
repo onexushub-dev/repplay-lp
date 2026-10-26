@@ -1,6 +1,7 @@
 import type { Locale } from './ui';
 import { PLAN_PRICES as P } from '../data/plans';
 
+export type TestimonialKey = 'marcus' | 'sara' | 'lorenzo' | 'lyandra' | 'victor' | 'yasmin';
 export type TriggerKey = 'tap' | 'gesture' | 'voice' | 'watch' | 'bluetooth' | 'phone';
 export type SportKey =
   | 'beachTennis'
@@ -14,7 +15,6 @@ export type SportKey =
   | 'handball'
   | 'futsal'
   | 'societyFootball'
-  | 'peteca'
   | 'snooker'
   | 'any';
 
@@ -65,6 +65,11 @@ export interface HomeCopy {
     credit: string;
     nav: { region: string; prev: string; next: string; slide: string };
     items: Record<SportKey, { title: string; body: string; alt: string }>;
+  };
+  testimonials: {
+    title: string;
+    subtitle: string;
+    items: Record<TestimonialKey, { tag: string; quote: string }>;
   };
   plans: {
     title: string;
@@ -243,11 +248,6 @@ const ptBR: HomeCopy = {
         body: 'Golaço no sintético e jogada de craque entre amigos.',
         alt: 'Dois jogadores disputando a bola em um jogo de futebol society',
       },
-      peteca: {
-        title: 'Peteca',
-        body: 'Mão certeira, peteca no ar e um rali que não pode cair.',
-        alt: 'Jogadora de top rosa se abaixando para pegar a peteca em uma quadra coberta',
-      },
       snooker: {
         title: 'Sinuca',
         body: 'A tacada perfeita também merece um replay.',
@@ -257,6 +257,36 @@ const ptBR: HomeCopy = {
         title: 'Qualquer esporte',
         body: 'Se tem esporte, tem lance. É só prender o celular e jogar.',
         alt: '',
+      },
+    },
+  },
+  testimonials: {
+    title: 'Quem já testou conta.',
+    subtitle: 'O que quem jogou com o Repplay mais gostou.',
+    items: {
+      marcus: {
+        tag: 'Basquete',
+        quote: 'Que app bom, mudou o meu jeito de jogar. E salvar o lance pelo Apple Watch é demais.',
+      },
+      lorenzo: {
+        tag: 'Society',
+        quote: 'Que ideia genial, uso em todo jogo. Editar e postar é fácil demais.',
+      },
+      victor: {
+        tag: 'Basquete',
+        quote: 'Esse app é show, grava tudo e eu não perco lance nenhum. E a memória do celular nunca enche.',
+      },
+      sara: {
+        tag: 'Beach tennis',
+        quote: 'Adorei o Repplay, é simples de usar. É só levantar os braços e o lance tá salvo.',
+      },
+      lyandra: {
+        tag: 'Futevôlei',
+        quote: 'Que app incrível, meus vídeos ficaram com cara de profissional. O Modo Foco acompanha a jogada sozinho.',
+      },
+      yasmin: {
+        tag: 'Beach tennis',
+        quote: 'Gostei demais do Repplay. Sem cadastro e sem mandar vídeo para a nuvem, fico tranquila.',
       },
     },
   },
@@ -514,11 +544,6 @@ const en: HomeCopy = {
         body: 'A screamer on turf and a star move among friends.',
         alt: 'Two players contesting the ball in a five-a-side football match',
       },
-      peteca: {
-        title: 'Peteca',
-        body: 'A hand-struck shuttle and a rally that cannot hit the ground.',
-        alt: 'Player in a pink top bending down to pick up the shuttle on an indoor court',
-      },
       snooker: {
         title: 'Snooker',
         body: 'The perfect shot deserves a replay too.',
@@ -528,6 +553,36 @@ const en: HomeCopy = {
         title: 'Any sport',
         body: 'If there is a sport, there is a play. Just mount the phone and play.',
         alt: '',
+      },
+    },
+  },
+  testimonials: {
+    title: 'Hear it from people who tested it.',
+    subtitle: 'What players liked most about Repplay.',
+    items: {
+      marcus: {
+        tag: 'Basketball',
+        quote: 'Such a great app, it changed how I play. And saving the play from my Apple Watch is amazing.',
+      },
+      lorenzo: {
+        tag: 'Five-a-side',
+        quote: 'Genius idea, I use it every game. Editing and posting is ridiculously easy.',
+      },
+      victor: {
+        tag: 'Basketball',
+        quote: 'This app is awesome, it records everything and I never miss a play. And my phone storage never fills up.',
+      },
+      sara: {
+        tag: 'Beach tennis',
+        quote: 'Loved Repplay, it is so simple to use. Just raise your arms and the play is saved.',
+      },
+      lyandra: {
+        tag: 'Footvolley',
+        quote: 'Such an amazing app, my videos look professional now. Focus Mode follows the play on its own.',
+      },
+      yasmin: {
+        tag: 'Beach tennis',
+        quote: 'I really like Repplay. No sign-up and no videos sent to the cloud, so I feel at ease.',
       },
     },
   },

@@ -19,7 +19,6 @@ Cada foto foi baixada em alta resolução e cortada uma vez em 4:5 (1080x1350) e
 | `handball.jpg` | foto 25048041 | Handebol, jogadora no ar em partida |
 | `futsal.jpg` | foto 37097046 | Futsal |
 | `society-football.jpg` | foto 39095099 | Futebol society, disputa de bola |
-| `peteca.jpg` | foto 8007411 | Peteca, jogadora em quadra coberta |
 | `snooker.jpg` | foto 5055799 | Sinuca, casal na mesa |
 
 ## Vídeos dos celulares
@@ -36,3 +35,16 @@ Como foram gerados (ffmpeg, partindo dos arquivos Full HD):
 - Os dois entram e saem do preto em 0,3 s para o loop não "pular". Codificação H.264 (crf 27, `+faststart`), cerca de 820 KB e 310 KB, mais um pôster WebP de cada.
 
 Se mudar o tamanho dos celulares no CSS, refaça os cortes para manter a proporção da tela, senão o vídeo é recortado pelo `object-fit: cover`.
+
+## Fotos das avaliações (provisórias)
+
+Retratos genéricos do Pexels de pessoas praticando esporte, só para ocupar o lugar até chegarem as fotos reais de cada pessoa. Em `src/assets/people/`, recortados em quadrado ao redor do rosto. Devem ser trocados antes de divulgar a página: foto de desconhecido ao lado de um nome sugere que aquela pessoa aprova o app.
+
+| Arquivo | Pexels | Cena |
+|---|---|---|
+| `marcus.jpg` | foto 4719828 | Basquete, homem quicando a bola |
+| `sara.jpg` | foto 38136059 | Beach tênis, jogadora de óculos esportivos |
+| `lorenzo.jpg` | foto 12169306 | Vôlei de praia, homem sorrindo |
+| `lyandra.jpg` | foto 5836907 | Tênis, mulher de rabo de cavalo |
+| `victor.jpg` | foto 8084773 | Basquete, homem sorrindo junto à tabela |
+| `yasmin.jpg` | foto 20823437 | Padel, jogadora na rede |

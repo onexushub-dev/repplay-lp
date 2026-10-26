@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { homeCopy } from '../../i18n/home';
+import { testimonials } from '../../data/testimonials';
+import type { Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = homeCopy[locale].testimonials;
+---
+
+<section id="testimonials" class="scroll-mt-8">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <div class="reveal max-w-3xl">
+      <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+      <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
+    </div>
+
+    <ul class="mt-10 grid gap-4 md:grid-cols-3">
+      {
+        testimonials.map((person) => {
+          const item = c.items[person.key];
+          return (
+            <li class="reveal">
+              <figure class="tile h-full gap-5">
+                <span class="quote-mark" aria-hidden="true">“</span>
+                <blockquote class="text-paper/90 text-lg leading-7 font-semibold">{item.quote}</blockquote>
+                <figcaption class="mt-auto flex items-center gap-3">
+                  <span class="avatar">
+                    {person.photo ? (
+                      <Image src={person.photo} alt="" width={96} height={96} class="size-full object-cover" loading="lazy" />
+                    ) : (
+                      <svg viewBox="0 0 24 24" class="size-full" fill="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="9" r="4.2" />
+                        <path d="M3.5 22c.6-4.7 4-7.2 8.5-7.2s7.9 2.5 8.5 7.2Z" />
+                      </svg>
+                    )}
+                  </span>
+                  <span class="flex flex-col gap-1">
+                    <span class="text-base font-extrabold">{person.name}</span>
+                    <span class="tag">{item.tag}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

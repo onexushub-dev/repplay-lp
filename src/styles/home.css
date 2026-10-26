@@ -654,6 +654,29 @@
   color: var(--color-lima);
 }
 
+/* Testimonials: a big opening quote mark and a round avatar (a generic silhouette until the real photo is added). */
+.quote-mark {
+  font-family: var(--font-barlow), sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 0.6;
+  height: 1.75rem;
+  color: var(--color-lima);
+}
+
+.avatar {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  place-items: end center;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 2px solid var(--color-lima);
+  background: var(--color-surface);
+  color: var(--color-muted);
+}
+
 @keyframes ripple {
   0% {
     opacity: 0.9;
