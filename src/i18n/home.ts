@@ -1,7 +1,7 @@
 import type { Locale } from './ui';
 import { PLAN_PRICES as P } from '../data/plans';
 
-export type TestimonialKey = 'marcus' | 'lorenzo' | 'victor';
+export type TestimonialKey = 'marcus' | 'sara' | 'lorenzo' | 'lyandra' | 'victor' | 'yasmin';
 export type TriggerKey = 'tap' | 'gesture' | 'voice' | 'watch' | 'bluetooth' | 'phone';
 export type SportKey =
   | 'beachTennis'
@@ -15,7 +15,6 @@ export type SportKey =
   | 'handball'
   | 'futsal'
   | 'societyFootball'
-  | 'peteca'
   | 'snooker'
   | 'any';
 
@@ -249,11 +248,6 @@ const ptBR: HomeCopy = {
         body: 'Golaço no sintético e jogada de craque entre amigos.',
         alt: 'Dois jogadores disputando a bola em um jogo de futebol society',
       },
-      peteca: {
-        title: 'Peteca',
-        body: 'Mão certeira, peteca no ar e um rali que não pode cair.',
-        alt: 'Jogadora de top rosa se abaixando para pegar a peteca em uma quadra coberta',
-      },
       snooker: {
         title: 'Sinuca',
         body: 'A tacada perfeita também merece um replay.',
@@ -271,16 +265,28 @@ const ptBR: HomeCopy = {
     subtitle: 'O que quem jogou com o Repplay mais gostou.',
     items: {
       marcus: {
-        tag: 'Apple Watch',
+        tag: 'Basquete',
         quote: 'Que app bom, mudou o meu jeito de jogar. E salvar o lance pelo Apple Watch é demais.',
       },
       lorenzo: {
-        tag: 'Editar e postar',
+        tag: 'Society',
         quote: 'Que ideia genial, uso em todo jogo. Editar e postar é fácil demais.',
       },
       victor: {
-        tag: 'Memória livre',
+        tag: 'Basquete',
         quote: 'Esse app é show, grava tudo e eu não perco lance nenhum. E a memória do celular nunca enche.',
+      },
+      sara: {
+        tag: 'Beach tennis',
+        quote: 'Adorei o Repplay, é simples de usar. É só levantar os braços e o lance tá salvo.',
+      },
+      lyandra: {
+        tag: 'Futevôlei',
+        quote: 'Que app incrível, meus vídeos ficaram com cara de profissional. O Modo Foco acompanha a jogada sozinho.',
+      },
+      yasmin: {
+        tag: 'Beach tennis',
+        quote: 'Gostei demais do Repplay. Sem cadastro e sem mandar vídeo para a nuvem, fico tranquila.',
       },
     },
   },
@@ -293,7 +299,7 @@ const ptBR: HomeCopy = {
       period: 'para sempre',
       items: [
         `${P.freeRecordingsPerMonth} gravações por mês`,
-        `Full HD, clipes de até ${P.freeClipSeconds} s`,
+        `Full HD, clipes de até ${P.freeClipSeconds}s`,
         'Todos os gatilhos, menos o relógio',
         'Editor e compartilhamento',
         'Marca d’água; som, velocidade e Foco só dentro do app',
@@ -315,7 +321,7 @@ const ptBR: HomeCopy = {
         `${P.trialDays} dias grátis para testar`,
         'Gravações ilimitadas',
         'Sem marca d’água; som, velocidade e Foco no vídeo',
-        'Clipes acima de 15 s, compilação e Apple Watch',
+        'Clipes acima de 15s, compilação e Apple Watch',
       ],
     },
     proYearly: {
@@ -328,7 +334,7 @@ const ptBR: HomeCopy = {
         `${P.trialDays} dias grátis para testar`,
         'Gravações ilimitadas',
         'Sem marca d’água; som, velocidade e Foco no vídeo',
-        'Clipes acima de 15 s, compilação e Apple Watch',
+        'Clipes acima de 15s, compilação e Apple Watch',
       ],
     },
     note: 'Valores em reais na loja do Brasil; em outros países a loja mostra o preço local. Cancele quando quiser nas configurações da App Store ou do Google Play. O vídeo exportado no plano Grátis leva a marca d’água do Repplay.',
@@ -538,11 +544,6 @@ const en: HomeCopy = {
         body: 'A screamer on turf and a star move among friends.',
         alt: 'Two players contesting the ball in a five-a-side football match',
       },
-      peteca: {
-        title: 'Peteca',
-        body: 'A hand-struck shuttle and a rally that cannot hit the ground.',
-        alt: 'Player in a pink top bending down to pick up the shuttle on an indoor court',
-      },
       snooker: {
         title: 'Snooker',
         body: 'The perfect shot deserves a replay too.',
@@ -560,16 +561,28 @@ const en: HomeCopy = {
     subtitle: 'What players liked most about Repplay.',
     items: {
       marcus: {
-        tag: 'Apple Watch',
+        tag: 'Basketball',
         quote: 'Such a great app, it changed how I play. And saving the play from my Apple Watch is amazing.',
       },
       lorenzo: {
-        tag: 'Edit and post',
+        tag: 'Five-a-side',
         quote: 'Genius idea, I use it every game. Editing and posting is ridiculously easy.',
       },
       victor: {
-        tag: 'Free storage',
+        tag: 'Basketball',
         quote: 'This app is awesome, it records everything and I never miss a play. And my phone storage never fills up.',
+      },
+      sara: {
+        tag: 'Beach tennis',
+        quote: 'Loved Repplay, it is so simple to use. Just raise your arms and the play is saved.',
+      },
+      lyandra: {
+        tag: 'Footvolley',
+        quote: 'Such an amazing app, my videos look professional now. Focus Mode follows the play on its own.',
+      },
+      yasmin: {
+        tag: 'Beach tennis',
+        quote: 'I really like Repplay. No sign-up and no videos sent to the cloud, so I feel at ease.',
       },
     },
   },
@@ -582,7 +595,7 @@ const en: HomeCopy = {
       period: 'forever',
       items: [
         `${P.freeRecordingsPerMonth} recordings per month`,
-        `Full HD, clips up to ${P.freeClipSeconds} s`,
+        `Full HD, clips up to ${P.freeClipSeconds}s`,
         'Every trigger except the watch',
         'Editor and sharing',
         'Watermark; sound, speed and Focus stay in the app',
@@ -604,7 +617,7 @@ const en: HomeCopy = {
         `${P.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
-        'Clips over 15 s, compilations and Apple Watch',
+        'Clips over 15s, compilations and Apple Watch',
       ],
     },
     proYearly: {
@@ -617,7 +630,7 @@ const en: HomeCopy = {
         `${P.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
-        'Clips over 15 s, compilations and Apple Watch',
+        'Clips over 15s, compilations and Apple Watch',
       ],
     },
     note: 'Prices in Brazilian reais from the Brazilian store; elsewhere your store shows local pricing. Cancel anytime in your App Store or Google Play settings. Videos exported on the Free plan carry the Repplay watermark.',

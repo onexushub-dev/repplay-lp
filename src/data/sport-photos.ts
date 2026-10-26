@@ -9,7 +9,6 @@ import basketball from '../assets/sports/basketball.jpg';
 import handball from '../assets/sports/handball.jpg';
 import futsal from '../assets/sports/futsal.jpg';
 import societyFootball from '../assets/sports/society-football.jpg';
-import peteca from '../assets/sports/peteca.jpg';
 import snooker from '../assets/sports/snooker.jpg';
 import type { SportKey } from '../i18n/home';
 
@@ -29,7 +28,6 @@ export const sportPhotos: Record<Exclude<SportKey, 'any'>, ImageMetadata> = {
   handball,
   futsal,
   societyFootball,
-  peteca,
   snooker,
 };
 
@@ -46,7 +44,6 @@ export const sportOrder: SportKey[] = [
   'basketball',
   'handball',
   'futsal',
-  'peteca',
   'snooker',
   'any',
 ];
