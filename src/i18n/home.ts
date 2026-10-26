@@ -269,7 +269,7 @@ const ptBR: HomeCopy = {
       period: 'para sempre',
       items: [
         `${P.freeRecordingsPerMonth} gravações por mês`,
-        `Full HD, clipes de até ${P.freeClipSeconds} s`,
+        `Full HD, clipes de até ${P.freeClipSeconds}s`,
         'Todos os gatilhos, menos o relógio',
         'Editor e compartilhamento',
         'Marca d’água; som, velocidade e Foco só dentro do app',
@@ -291,7 +291,7 @@ const ptBR: HomeCopy = {
         `${P.trialDays} dias grátis para testar`,
         'Gravações ilimitadas',
         'Sem marca d’água; som, velocidade e Foco no vídeo',
-        'Clipes acima de 15 s, compilação e Apple Watch',
+        'Clipes acima de 15s, compilação e Apple Watch',
       ],
     },
     proYearly: {
@@ -304,7 +304,7 @@ const ptBR: HomeCopy = {
         `${P.trialDays} dias grátis para testar`,
         'Gravações ilimitadas',
         'Sem marca d’água; som, velocidade e Foco no vídeo',
-        'Clipes acima de 15 s, compilação e Apple Watch',
+        'Clipes acima de 15s, compilação e Apple Watch',
       ],
     },
     note: 'Valores em reais na loja do Brasil; em outros países a loja mostra o preço local. Cancele quando quiser nas configurações da App Store ou do Google Play. O vídeo exportado no plano Grátis leva a marca d’água do Repplay.',
@@ -540,7 +540,7 @@ const en: HomeCopy = {
       period: 'forever',
       items: [
         `${P.freeRecordingsPerMonth} recordings per month`,
-        `Full HD, clips up to ${P.freeClipSeconds} s`,
+        `Full HD, clips up to ${P.freeClipSeconds}s`,
         'Every trigger except the watch',
         'Editor and sharing',
         'Watermark; sound, speed and Focus stay in the app',
@@ -562,7 +562,7 @@ const en: HomeCopy = {
         `${P.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
-        'Clips over 15 s, compilations and Apple Watch',
+        'Clips over 15s, compilations and Apple Watch',
       ],
     },
     proYearly: {
@@ -575,7 +575,7 @@ const en: HomeCopy = {
         `${P.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
-        'Clips over 15 s, compilations and Apple Watch',
+        'Clips over 15s, compilations and Apple Watch',
       ],
     },
     note: 'Prices in Brazilian reais from the Brazilian store; elsewhere your store shows local pricing. Cancel anytime in your App Store or Google Play settings. Videos exported on the Free plan carry the Repplay watermark.',
