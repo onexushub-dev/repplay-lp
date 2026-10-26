@@ -39,6 +39,12 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      // The default minifier (Lightning CSS) folds `animation-timeline: view()` into the `animation` shorthand, which
+      // browsers reject, so every scroll-driven animation (reveals, the steps line, the sticky CTA) disappears in the
+      // production build while still working in dev. esbuild keeps the longhand as written.
+      cssMinify: 'esbuild',
+    },
   },
 
   integrations: [
