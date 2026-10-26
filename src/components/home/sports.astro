@@ -1,10 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import beachTennis from '../../assets/sports/beach-tennis.jpg';
-import footvolley from '../../assets/sports/footvolley.jpg';
-import beachVolleyball from '../../assets/sports/beach-volleyball.jpg';
-import anySport from '../../assets/sports/any-sport.jpg';
-import { homeCopy, type SportKey } from '../../i18n/home';
+import { sportOrder, sportPhotos } from '../../data/sport-photos';
+import { homeCopy } from '../../i18n/home';
 import type { Locale } from '../../i18n/ui';
 
 interface Props {
@@ -13,52 +10,169 @@ interface Props {
 
 const { locale } = Astro.props;
 const c = homeCopy[locale].sports;
-
-// Where each photo is cropped inside the 4:5 card, so the athlete stays in frame.
-const photos: Record<SportKey, { src: ImageMetadata; position: string }> = {
-  beachTennis: { src: beachTennis, position: '50% 22%' },
-  footvolley: { src: footvolley, position: '50% 38%' },
-  beachVolley: { src: beachVolleyball, position: '42% 40%' },
-  any: { src: anySport, position: '58% 30%' },
-};
-const order: SportKey[] = ['beachTennis', 'footvolley', 'beachVolley', 'any'];
+const total = sportOrder.length;
+const slideLabel = (n: number) => c.nav.slide.replace('{n}', String(n)).replace('{total}', String(total));
 ---
 
-<section id="sports" class="border-line bg-surface/30 scroll-mt-8 border-y">
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="reveal max-w-3xl">
-      <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
-      <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
-    </div>
+<section id="sports" class="border-line bg-surface/30 scroll-mt-8 overflow-hidden border-y" data-sports>
+  <div class="mx-auto max-w-6xl px-4 pt-16 sm:px-6 sm:pt-24">
+    <div class="flex items-end justify-between gap-6">
+      <div class="reveal max-w-3xl">
+        <h2 class="text-4xl font-extrabold sm:text-5xl lg:text-6xl">{c.title}</h2>
+        <p class="text-muted mt-4 text-base sm:text-lg">{c.subtitle}</p>
+      </div>
 
-    <ul class="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div class="hidden shrink-0 gap-2 sm:flex">
+        <button type="button" class="carousel-btn" data-prev aria-label={c.nav.prev}>
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 5-7 7 7 7" />
+          </svg>
+        </button>
+        <button type="button" class="carousel-btn" data-next aria-label={c.nav.next}>
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-10" role="region" aria-roledescription="carousel" aria-label={c.nav.region}>
+    <ul class="sports-track" tabindex="0" data-track>
       {
-        order.map((key) => {
-          const photo = photos[key];
+        sportOrder.map((key, index) => {
           const item = c.items[key];
           return (
-            <li class="sport-card reveal border-line group relative isolate aspect-[4/5] overflow-hidden rounded-2xl border">
-              <Image
-                src={photo.src}
-                alt={item.alt}
-                widths={[360, 560, 800]}
-                sizes="(min-width: 1024px) 22vw, 46vw"
-                format="webp"
-                quality={72}
-                loading="lazy"
-                class="sport-card__img absolute inset-0 h-full w-full object-cover"
-                style={`object-position:${photo.position}`}
-              />
-              <div class="from-ink via-ink/55 absolute inset-0 bg-gradient-to-t to-transparent to-60%" />
-              <div class="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                <h3 class="text-2xl font-extrabold sm:text-3xl">{item.title}</h3>
-                <p class="text-paper/80 mt-1.5 text-xs leading-5 sm:text-sm sm:leading-6">{item.body}</p>
-              </div>
+            <li
+              class:list={['sport-slide group', key === 'any' && 'sport-slide--any']}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={slideLabel(index + 1)}
+            >
+              {key === 'any' ? (
+                <div class="absolute inset-0 flex flex-col items-start justify-between p-5">
+                  <img src="/brand/repplay-simbolo-fundo-escuro.svg" alt="" width="56" height="56" class="h-14 w-auto" loading="lazy" draggable="false" />
+                  <div>
+                    <h3 class="text-3xl font-extrabold sm:text-4xl">{item.title}</h3>
+                    <p class="text-paper/80 mt-2 text-sm leading-6">{item.body}</p>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <Image
+                    src={sportPhotos[key]}
+                    alt={item.alt}
+                    widths={[280, 420, 560, 840]}
+                    sizes="(min-width: 640px) 280px, 60vw"
+                    format="webp"
+                    quality={72}
+                    loading={index < 4 ? 'eager' : 'lazy'}
+                    draggable="false"
+                    class="sport-slide__img absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div class="from-ink via-ink/55 absolute inset-0 bg-gradient-to-t to-transparent to-60%" />
+                  <div class="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                    <h3 class="text-2xl font-extrabold sm:text-3xl">{item.title}</h3>
+                    <p class="text-paper/80 mt-1.5 text-xs leading-5 sm:text-sm sm:leading-6">{item.body}</p>
+                  </div>
+                </>
+              )}
             </li>
           );
         })
       }
     </ul>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 pt-6 pb-16 sm:px-6 sm:pb-24">
+    <div class="sports-progress" aria-hidden="true"><span data-thumb></span></div>
     <p class="text-muted mt-4 text-xs">{c.credit}</p>
   </div>
 </section>
+
+<script>
+  // Sports carousel: native scroll-snap does the swiping on touch; the mouse can drag it, and the arrows and keys step it.
+  const section = document.querySelector<HTMLElement>('[data-sports]');
+  const track = section?.querySelector<HTMLElement>('[data-track]');
+
+  if (section && track) {
+    const prev = section.querySelector<HTMLButtonElement>('[data-prev]');
+    const next = section.querySelector<HTMLButtonElement>('[data-next]');
+    const thumb = section.querySelector<HTMLElement>('[data-thumb]');
+    const slides = Array.from(track.children) as HTMLElement[];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const behavior = (): ScrollBehavior => (reduceMotion.matches ? 'auto' : 'smooth');
+
+    // Distance between the left edges of two neighbouring slides.
+    const step = () => {
+      if (slides.length < 2) return slides[0]?.offsetWidth ?? 0;
+      return slides[1].offsetLeft - slides[0].offsetLeft;
+    };
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const goTo = (index: number) => {
+      const clamped = Math.max(0, Math.min(slides.length - 1, index));
+      track.scrollTo({ left: Math.min(clamped * step(), maxScroll()), behavior: behavior() });
+    };
+
+    const update = () => {
+      const max = maxScroll();
+      const visible = (track.clientWidth / track.scrollWidth) * 100;
+      if (thumb) {
+        thumb.style.width = `${visible}%`;
+        thumb.style.left = `${max > 0 ? (track.scrollLeft / max) * (100 - visible) : 0}%`;
+      }
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    };
+
+    let frame = 0;
+    track.addEventListener('scroll', () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: behavior() }));
+    next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: behavior() }));
+
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') { event.preventDefault(); track.scrollBy({ left: step(), behavior: behavior() }); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); track.scrollBy({ left: -step(), behavior: behavior() }); }
+    });
+
+    // Mouse drag. Touch keeps the browser's own swipe, so only mouse pointers are handled here.
+    let dragging = false;
+    let startX = 0;
+    let startLeft = 0;
+
+    track.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      dragging = true;
+      startX = event.clientX;
+      startLeft = track.scrollLeft;
+      track.setPointerCapture(event.pointerId);
+      track.classList.add('is-dragging');
+    });
+
+    track.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      track.scrollLeft = startLeft - (event.clientX - startX);
+    });
+
+    const endDrag = (event: PointerEvent) => {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('is-dragging');
+      const dx = event.clientX - startX;
+      const unit = step() || 1;
+      const startIndex = Math.round(startLeft / unit);
+      let index = Math.round(track.scrollLeft / unit);
+      // A short flick moves one slide even when the drag did not cross half of it.
+      if (index === startIndex && Math.abs(dx) > 40) index += dx < 0 ? 1 : -1;
+      goTo(index);
+    };
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+  }
+</script>

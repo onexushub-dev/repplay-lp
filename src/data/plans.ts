@@ -13,7 +13,7 @@ export const PLAN_PRICES = {
   proYearlyPerMonth: `R$ ${(PRO_YEARLY_VALUE / 12).toFixed(2).replace('.', ',')}`,
   /** How much cheaper the yearly plan is than twelve monthly payments. */
   yearlySavingsPercent: Math.round((1 - PRO_YEARLY_VALUE / (PRO_MONTHLY_VALUE * 12)) * 100),
-  freeRecordingsPerMonth: 5,
+  freeRecordingsPerMonth: 3,
   freeClipSeconds: 15,
   trialDays: 7,
 } as const;

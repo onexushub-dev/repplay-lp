@@ -12,7 +12,9 @@ import Plans from './home/plans.astro';
 import Faq from './home/faq.astro';
 import FinalCta from './home/final-cta.astro';
 import StickyCta from './home/sticky-cta.astro';
-import { useTranslations, type Locale } from '../i18n/ui';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { homeCopy } from '../i18n/home';
+import { SUPPORT_EMAIL, useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -20,9 +22,51 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+
+const site = Astro.site!.origin;
+const pageUrl = getAbsoluteLocaleUrl(locale, '');
+const publisher = {
+  '@type': 'Organization',
+  '@id': `${site}/#organization`,
+  name: 'Repplay',
+  url: site,
+  logo: `${site}/icon-512.png`,
+  contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
+};
+const jsonLd = [
+  { '@context': 'https://schema.org', ...publisher },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'Repplay',
+    url: pageUrl,
+    description: t('meta.homeDescription'),
+    inLanguage: locale,
+    applicationCategory: 'SportsApplication',
+    operatingSystem: 'iOS, Android',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+    publisher: { '@id': publisher['@id'] },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: locale,
+    mainEntity: homeCopy[locale].faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  },
+];
 ---
 
-<BaseLayout locale={locale} title={t('meta.homeTitle')} description={t('meta.homeDescription')}>
+<BaseLayout
+  locale={locale}
+  title={t('meta.homeTitle')}
+  description={t('meta.homeDescription')}
+  jsonLd={jsonLd}
+  preloadImage="/media/beach-tennis-hero.webp"
+>
   <Hero locale={locale} />
   <Facts locale={locale} />
   <HowItWorks locale={locale} />

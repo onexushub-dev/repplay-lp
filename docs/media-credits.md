@@ -2,14 +2,25 @@
 
 Todas as mídias de esportes vêm do [Pexels](https://www.pexels.com/license/), de licença gratuita para uso comercial. A licença não permite sugerir que as pessoas retratadas endossam o produto. Se as imagens forem trocadas por filmagem própria, remova esta lista e o crédito "Fotos e vídeos: Pexels" da seção de esportes.
 
-## Fotos (seção "Feito para a areia")
+## Fotos (carrossel "Feito para a areia")
+
+Cada foto foi baixada em alta resolução e cortada uma vez em 4:5 (1080x1350) em volta do atleta. Cortar depois de reduzir a foto inteira, como era antes, deixava as fotos largas borradas.
 
 | Arquivo em `src/assets/sports` | Pexels | Cena |
 |---|---|---|
-| `beach-tennis.jpg` | foto 38136058 | Beach tennis, jogador em salto |
+| `beach-tennis.jpg` | foto 20655636 | Beach tennis, duas jogadoras na areia |
 | `footvolley.jpg` | foto 38179542 | Chute de bicicleta junto à rede |
-| `beach-volleyball.jpg` | foto 10578357 | Vôlei de praia |
-| `any-sport.jpg` | foto 34544419 | Vôlei de quadra fechada |
+| `beach-volleyball.jpg` | foto 37962307 | Vôlei de praia em Lloret de Mar |
+| `volleyball.jpg` | foto 34544419 | Vôlei de quadra fechada |
+| `tennis.jpg` | foto 18016912 | Tênis, saque em quadra de saibro |
+| `padel.jpg` | foto 35248400 | Padel, jogadora avançando |
+| `table-tennis.jpg` | foto 38233887 | Tênis de mesa |
+| `basketball.jpg` | foto 30053813 | Basquete, enterrada |
+| `handball.jpg` | foto 25048041 | Handebol, jogadora no ar em partida |
+| `futsal.jpg` | foto 37097046 | Futsal |
+| `society-football.jpg` | foto 39095099 | Futebol society, disputa de bola |
+| `peteca.jpg` | foto 8007411 | Peteca, jogadora em quadra coberta |
+| `snooker.jpg` | foto 5055799 | Sinuca, casal na mesa |
 
 ## Vídeos dos celulares
 
