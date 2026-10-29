@@ -42,8 +42,8 @@
 /* ---------- Hero ---------- */
 .hero-glow {
   background:
-    radial-gradient(55% 45% at 72% 38%, rgb(214 242 63 / 0.16), transparent 70%),
-    radial-gradient(40% 40% at 8% 90%, rgb(95 125 11 / 0.18), transparent 70%);
+    radial-gradient(55% 45% at 72% 38%, rgb(255 176 0 / 0.16), transparent 70%),
+    radial-gradient(40% 40% at 8% 90%, rgb(148 98 0 / 0.18), transparent 70%);
 }
 
 .grain::after {
@@ -63,7 +63,7 @@
 }
 
 .hero-title .accent {
-  color: var(--color-lima);
+  color: var(--color-amber);
   display: inline-block;
   position: relative;
 }
@@ -75,11 +75,11 @@
   aspect-ratio: 9 / 19;
   padding: 0.5rem;
   border-radius: 2.9rem;
-  background: linear-gradient(160deg, #2c2f26, #12130e 60%);
+  background: linear-gradient(160deg, #2e2e2e, #0a0a0a 60%);
   border: 1px solid var(--color-line);
   box-shadow:
     0 50px 90px -30px rgb(0 0 0 / 0.9),
-    0 0 90px -30px rgb(214 242 63 / 0.25),
+    0 0 90px -30px rgb(255 176 0 / 0.25),
     inset 0 0 0 1px rgb(255 255 255 / 0.04);
 }
 
@@ -102,7 +102,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: 2.45rem;
-  background: #0f100d;
+  background: #0a0a0a;
   container-type: size;
   isolation: isolate;
 }
@@ -138,7 +138,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #0f100d;
+  background: #0a0a0a;
 }
 
 /* ---------- Recording screen (9s loop) ---------- */
@@ -158,13 +158,13 @@
 .rec::before {
   top: 0;
   height: 38cqw;
-  background: linear-gradient(180deg, rgb(11 11 9 / 0.62), transparent);
+  background: linear-gradient(180deg, rgb(10 10 10 / 0.62), transparent);
 }
 
 .rec::after {
   bottom: 0;
   height: 52cqw;
-  background: linear-gradient(0deg, rgb(11 11 9 / 0.82), transparent);
+  background: linear-gradient(0deg, rgb(10 10 10 / 0.82), transparent);
 }
 
 .rec__top {
@@ -186,7 +186,7 @@
   gap: 2cqw;
   padding: 1.6cqw 3.2cqw;
   border-radius: 999px;
-  background: rgb(11 11 9 / 0.62);
+  background: rgb(10 10 10 / 0.62);
   backdrop-filter: blur(6px);
 }
 
@@ -226,7 +226,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgb(243 237 225 / 0.8);
+  color: rgb(255 255 255 / 0.8);
 }
 
 .rec__count-num {
@@ -269,7 +269,7 @@
   100% {
     opacity: 1;
     transform: none;
-    color: var(--color-lima);
+    color: var(--color-amber);
   }
 }
 
@@ -300,7 +300,7 @@
   height: 1.4cqw;
   overflow: hidden;
   border-radius: 999px;
-  background: rgb(243 237 225 / 0.22);
+  background: rgb(255 255 255 / 0.22);
 }
 
 @keyframes fill-bar {
@@ -316,13 +316,13 @@
   height: 100%;
   transform-origin: left;
   border-radius: 999px;
-  background: var(--color-lima);
+  background: var(--color-amber);
   animation: fill-bar 3.4s ease-out both;
 }
 
 .rec__hint {
   text-align: center;
-  color: rgb(243 237 225 / 0.9);
+  color: rgb(255 255 255 / 0.9);
 }
 
 @keyframes hint-blink {
@@ -363,8 +363,8 @@
   inset: 0;
   z-index: 4;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1.6cqw var(--color-lima);
-  background: radial-gradient(70% 55% at 50% 50%, rgb(214 242 63 / 0.18), transparent 70%);
+  box-shadow: inset 0 0 0 1.6cqw var(--color-amber);
+  background: radial-gradient(70% 55% at 50% 50%, rgb(255 176 0 / 0.18), transparent 70%);
   animation: save-flash var(--loop) ease-out infinite;
 }
 
@@ -392,7 +392,7 @@
   inset: auto 6cqw 27cqw;
   padding: 3.6cqw 4.4cqw;
   border-radius: 4.4cqw;
-  background: var(--color-lima);
+  background: var(--color-amber);
   color: var(--color-ink);
   animation: toast-in var(--loop) cubic-bezier(0.2, 0.9, 0.3, 1) infinite;
 }
@@ -446,7 +446,7 @@
   position: absolute;
   width: 6cqw;
   height: 6cqw;
-  border: 0.9cqw solid var(--color-lima);
+  border: 0.9cqw solid var(--color-amber);
 }
 
 .edit__focus::before {
@@ -488,7 +488,7 @@
   display: grid;
   align-content: start;
   gap: 4.4cqw;
-  background: linear-gradient(180deg, #14150f, #0b0b09);
+  background: linear-gradient(180deg, #141414, #0a0a0a);
   border-top: 1px solid var(--color-line);
   font-size: 3.3cqw;
   font-weight: 700;
@@ -517,7 +517,7 @@
 }
 
 .edit__tool--on {
-  background: var(--color-lima);
+  background: var(--color-amber);
   color: var(--color-ink);
 }
 
@@ -526,7 +526,7 @@
   height: 11cqw;
   border-radius: 3cqw;
   background:
-    repeating-linear-gradient(90deg, rgb(243 237 225 / 0.1) 0 0.6cqw, transparent 0.6cqw 3cqw),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.1) 0 0.6cqw, transparent 0.6cqw 3cqw),
     var(--color-surface);
   overflow: hidden;
 }
@@ -549,9 +549,9 @@
 .edit__window {
   position: absolute;
   inset-block: 0;
-  border: 0.9cqw solid var(--color-lima);
+  border: 0.9cqw solid var(--color-amber);
   border-radius: 2.4cqw;
-  background: rgb(214 242 63 / 0.14);
+  background: rgb(255 176 0 / 0.14);
   animation: trim-window 5.5s ease-in-out infinite alternate;
 }
 
@@ -589,7 +589,7 @@
 }
 
 .edit__btn--primary {
-  background: var(--color-lima);
+  background: var(--color-amber);
   color: var(--color-ink);
   border-color: transparent;
 }
@@ -603,7 +603,7 @@
   padding: 1.1rem;
   border-radius: 1.25rem;
   border: 1px solid var(--color-line);
-  background: linear-gradient(160deg, rgb(27 29 24 / 0.9), rgb(11 11 9 / 0.9));
+  background: linear-gradient(160deg, rgb(20 20 20 / 0.9), rgb(10 10 10 / 0.9));
   transition:
     border-color 0.25s,
     transform 0.25s;
@@ -611,7 +611,7 @@
 
 .tile:hover,
 .tile:focus-within {
-  border-color: var(--color-lima);
+  border-color: var(--color-amber);
   transform: translateY(-4px);
 }
 
@@ -619,7 +619,7 @@
   width: 3.25rem;
   height: 3.25rem;
   flex-shrink: 0;
-  color: var(--color-lima);
+  color: var(--color-amber);
 }
 
 /* On phones the trigger cards lie down (icon beside the text) so six of them do not take a screen each. */
@@ -650,8 +650,8 @@
 }
 
 .tag--pro {
-  border-color: var(--color-lima);
-  color: var(--color-lima);
+  border-color: var(--color-amber);
+  color: var(--color-amber);
 }
 
 /* Testimonials: a big opening quote mark and a round avatar (a generic silhouette until the real photo is added). */
@@ -661,7 +661,7 @@
   font-weight: 800;
   line-height: 0.6;
   height: 1.75rem;
-  color: var(--color-lima);
+  color: var(--color-amber);
 }
 
 .avatar {
@@ -672,7 +672,7 @@
   place-items: end center;
   overflow: hidden;
   border-radius: 999px;
-  border: 2px solid var(--color-lima);
+  border: 2px solid var(--color-amber);
   background: var(--color-surface);
   color: var(--color-muted);
 }
@@ -780,7 +780,7 @@
   line-height: 0.85;
   font-size: clamp(3rem, 8vw, 6rem);
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-lima);
+  -webkit-text-stroke: 1.5px var(--color-amber);
 }
 
 /* ---------- Privacy ring ---------- */
@@ -816,7 +816,7 @@
 }
 
 .tick--keep {
-  stroke: var(--color-lima);
+  stroke: var(--color-amber);
   stroke-width: 4;
   animation: keep-pulse 2.4s ease-in-out infinite;
   animation-delay: 0s;
@@ -860,7 +860,7 @@
 }
 
 .sport-slide:hover {
-  border-color: var(--color-lima);
+  border-color: var(--color-amber);
 }
 
 .sport-slide__img {
@@ -875,9 +875,9 @@
 
 .sport-slide--any {
   background:
-    radial-gradient(90% 60% at 80% 0%, rgb(214 242 63 / 0.28), transparent 70%),
-    linear-gradient(160deg, #1b1d18, #0b0b09);
-  border-color: rgb(214 242 63 / 0.5);
+    radial-gradient(90% 60% at 80% 0%, rgb(255 176 0 / 0.28), transparent 70%),
+    linear-gradient(160deg, #141414, #0a0a0a);
+  border-color: rgb(255 176 0 / 0.5);
 }
 
 .carousel-btn {
@@ -895,8 +895,8 @@
 }
 
 .carousel-btn:hover:not(:disabled) {
-  border-color: var(--color-lima);
-  color: var(--color-lima);
+  border-color: var(--color-amber);
+  color: var(--color-amber);
 }
 
 .carousel-btn:disabled {
@@ -917,7 +917,7 @@
   left: 0;
   width: 30%;
   border-radius: 999px;
-  background: var(--color-lima);
+  background: var(--color-amber);
 }
 
 /* ---------- Sticky mobile CTA ---------- */
@@ -926,7 +926,7 @@
   inset: auto 0 0;
   z-index: 30;
   padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-  background: linear-gradient(180deg, transparent, rgb(11 11 9 / 0.92) 38%);
+  background: linear-gradient(180deg, transparent, rgb(10 10 10 / 0.92) 38%);
   backdrop-filter: blur(8px);
 }
 

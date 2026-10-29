@@ -25,9 +25,9 @@ const year = new Date().getFullYear();
         />
       </a>
       <nav aria-label="Legal" class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
-        <a href={getRelativeLocaleUrl(locale, 'privacy')} class="hover:text-lima">{t('nav.privacy')}</a>
-        <a href={getRelativeLocaleUrl(locale, 'terms')} class="hover:text-lima">{t('nav.terms')}</a>
-        <a href={`mailto:${SUPPORT_EMAIL}`} class="hover:text-lima">{t('footer.contact')}</a>
+        <a href={getRelativeLocaleUrl(locale, 'privacy')} class="hover:text-amber">{t('nav.privacy')}</a>
+        <a href={getRelativeLocaleUrl(locale, 'terms')} class="hover:text-amber">{t('nav.terms')}</a>
+        <a href={`mailto:${SUPPORT_EMAIL}`} class="hover:text-amber">{t('footer.contact')}</a>
       </nav>
     </div>
     <p class="text-muted mt-8 max-w-3xl text-xs leading-5">{t('footer.company')}</p>

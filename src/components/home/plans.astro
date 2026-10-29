@@ -9,25 +9,25 @@ interface Props {
 const { locale } = Astro.props;
 const c = homeCopy[locale].plans;
 
-type Tone = 'plain' | 'lima' | 'oliva';
+type Tone = 'plain' | 'amber' | 'amber-dark';
 
 const plans = [
   { plan: c.free, tone: 'plain' as Tone },
   { plan: c.pass, tone: 'plain' as Tone },
-  { plan: c.proMonthly, tone: 'lima' as Tone },
-  { plan: c.proYearly, tone: 'oliva' as Tone },
+  { plan: c.proMonthly, tone: 'amber' as Tone },
+  { plan: c.proYearly, tone: 'amber-dark' as Tone },
 ];
 
-// Lima and Oliva cards swap the text color to keep the contrast (Ink on Lima, white on Oliva).
+// Amber and Dark amber cards swap the text color to keep the contrast (Ink on Amber, white on Dark amber).
 const card: Record<Tone, string> = {
   plain: 'border-line bg-surface/50 border',
-  lima: 'bg-lima text-ink border-lima border',
-  oliva: 'bg-oliva border-oliva border text-white',
+  amber: 'bg-amber text-ink border-amber border',
+  'amber-dark': 'bg-amber-dark border-amber-dark border text-white',
 };
 const check: Record<Tone, string> = {
-  plain: 'text-lima',
-  lima: 'text-ink',
-  oliva: 'text-lima',
+  plain: 'text-amber',
+  amber: 'text-ink',
+  'amber-dark': 'text-white',
 };
 ---
 
@@ -44,8 +44,8 @@ const check: Record<Tone, string> = {
           {'badge' in plan && (
             <span
               class:list={[
-                'absolute -top-3 right-4 rounded-full px-3 py-1 text-[0.68rem] font-extrabold tracking-[0.12em] uppercase',
-                tone === 'lima' ? 'bg-ink text-lima' : 'bg-lima text-ink',
+                'border-ink text-ink absolute -top-3.5 right-4 rounded-full border-[3px] px-3 py-1 text-[0.68rem] font-extrabold tracking-[0.12em] uppercase',
+                tone === 'amber' ? 'bg-paper' : 'bg-amber',
               ]}
             >
               {plan.badge}

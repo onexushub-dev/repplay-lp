@@ -17,7 +17,7 @@ const current = localeMeta[locale];
 <details class="group relative" data-lang-menu>
   <summary
     aria-label={`${t('lang.label')}: ${current.label}`}
-    class="border-line hover:border-lima flex cursor-pointer list-none items-center gap-2 rounded-full border py-1.5 pr-3 pl-3 text-sm font-semibold transition-colors select-none [&::-webkit-details-marker]:hidden"
+    class="border-line hover:border-amber flex cursor-pointer list-none items-center gap-2 rounded-full border py-1.5 pr-3 pl-3 text-sm font-semibold transition-colors select-none [&::-webkit-details-marker]:hidden"
   >
     <Flag code={current.flag} />
     <span>{current.label}</span>
@@ -46,7 +46,7 @@ const current = localeMeta[locale];
               aria-current={isCurrent ? 'true' : undefined}
               class:list={[
                 'hover:bg-ink flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold',
-                isCurrent && 'text-lima',
+                isCurrent && 'text-amber',
               ]}
             >
               <Flag code={meta.flag} />
