@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-/* Brand kit: repplay/docs/brand/repplay (cores.css, guia-de-marca). Lima never goes on light backgrounds. */
+/* Brand kit palette: Ink, White and Amber as the only accent. Amber never goes on light backgrounds; Dark amber is its light-background version. */
 @theme {
-  --color-ink: #0b0b09;
-  --color-paper: #f3ede1;
-  --color-lima: #d6f23f;
-  --color-oliva: #5f7d0b;
-  --color-surface: #1b1d18;
-  --color-line: #3a3d34;
-  --color-muted: #a9a79c;
-  --color-rec: #ff5a36;
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-amber: #ffb000;
+  --color-amber-dark: #946200;
+  --color-surface: #141414;
+  --color-line: #2e2e2e;
+  --color-muted: #b3b3b3;
+  --color-rec: #ff453a;
 }
 
 @theme inline {
@@ -37,12 +37,12 @@
   }
 
   ::selection {
-    background-color: var(--color-lima);
+    background-color: var(--color-amber);
     color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-lima);
+    outline: 2px solid var(--color-amber);
     outline-offset: 3px;
   }
 
@@ -101,11 +101,11 @@
 }
 
 .legal li::marker {
-  color: var(--color-lima);
+  color: var(--color-amber);
 }
 
 .legal a {
-  @apply text-lima underline underline-offset-4;
+  @apply text-amber underline underline-offset-4;
 }
 
 .legal strong {
@@ -126,7 +126,7 @@
 }
 
 .legal blockquote {
-  @apply border-lima bg-surface my-6 rounded-r-lg border-l-4 px-5 py-3;
+  @apply border-amber bg-surface my-6 rounded-r-lg border-l-4 px-5 py-3;
 }
 
 .legal blockquote p {

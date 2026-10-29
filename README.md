@@ -24,12 +24,12 @@ pnpm preview   # serve a pasta dist
 | `src/components` | `HomePage`, `LegalPage` e peças de layout. |
 | `src/content/legal` | Textos de Privacidade e Termos em markdown, por idioma (`pt-br`, `en`). |
 | `src/i18n/ui.ts` | Textos da interface nos dois idiomas. |
-| `src/styles/global.css` | Tokens da marca (Ink, Paper, Lima, Oliva) e estilo dos textos legais. |
+| `src/styles/global.css` | Tokens da marca (Ink, Paper, Amber, Dark amber) e estilo dos textos legais. |
 | `public` | Favicons, manifest, logos e imagem OG copiados do kit de marca. |
 
 ## Marca
 
-Os arquivos vêm de `docs/brand/repplay` no repositório `repplay`. O Lima é `#D6F23F` e nunca vai sobre fundo claro.
+Os arquivos vêm de `docs/brand/repplay` no repositório `repplay`. O Âmbar é `#FFB000` e nunca vai sobre fundo claro; nele entra o Âmbar escuro (`#946200`). Paleta em Ink `#0A0A0A`, Branco `#FFFFFF`, Âmbar e Âmbar escuro.
 
 ## Links das lojas
 

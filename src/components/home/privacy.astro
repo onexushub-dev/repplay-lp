@@ -38,22 +38,22 @@ const ticks = Array.from({ length: TICKS }, (_, i) => ({
             />
           ))
         }
-        <text x="120" y="132" text-anchor="middle" fill="#f3ede1" font-family="var(--font-barlow), sans-serif" font-weight="800" font-size="46">{c.ring.center.toUpperCase()}</text>
-        <text x="120" y="160" text-anchor="middle" fill="#d6f23f" font-family="var(--font-manrope), sans-serif" font-weight="700" font-size="10" letter-spacing="1.6">
+        <text x="120" y="132" text-anchor="middle" fill="#ffffff" font-family="var(--font-barlow), sans-serif" font-weight="800" font-size="46">{c.ring.center.toUpperCase()}</text>
+        <text x="120" y="160" text-anchor="middle" fill="#ffb000" font-family="var(--font-manrope), sans-serif" font-weight="700" font-size="10" letter-spacing="1.6">
           ● {c.ring.kept.toUpperCase()}
         </text>
       </svg>
     </div>
 
     <div>
-      <p class="text-lima reveal text-xs font-bold tracking-[0.24em] uppercase sm:text-sm">{c.eyebrow}</p>
+      <p class="text-amber reveal text-xs font-bold tracking-[0.24em] uppercase sm:text-sm">{c.eyebrow}</p>
       <h2 class="reveal mt-3 text-4xl font-extrabold sm:text-5xl">{c.title}</h2>
       <p class="text-paper/80 reveal mt-5 max-w-xl text-lg leading-8">{c.body}</p>
       <ul class="mt-7 grid gap-3">
         {
           c.bullets.map((b) => (
             <li class="reveal flex items-start gap-3 font-semibold">
-              <svg viewBox="0 0 24 24" class="text-lima mt-0.5 size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="text-amber mt-0.5 size-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m5 12.5 4.5 4.5L19 7.5" />
               </svg>
               {b}
@@ -61,7 +61,7 @@ const ticks = Array.from({ length: TICKS }, (_, i) => ({
           ))
         }
       </ul>
-      <a href={getRelativeLocaleUrl(locale, 'privacy')} class="text-lima mt-8 inline-block font-bold underline underline-offset-4">
+      <a href={getRelativeLocaleUrl(locale, 'privacy')} class="text-amber mt-8 inline-block font-bold underline underline-offset-4">
         {c.link} →
       </a>
     </div>
