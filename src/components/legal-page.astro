@@ -19,7 +19,7 @@ const { Content } = await render(entry);
 const updated = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(entry.data.updated);
 ---
 
-<BaseLayout locale={locale} title={`${entry.data.title} | Repplay`} description={entry.data.description} slug={slug}>
+<BaseLayout locale={locale} title={`${entry.data.title} | Revi`} description={entry.data.description} slug={slug}>
   <article class="legal mx-auto max-w-3xl px-4 pt-14 pb-24 sm:px-6 sm:pt-20">
     <a href={getRelativeLocaleUrl(locale, '')} class="text-muted hover:text-amber text-sm font-semibold no-underline">
       ← {t('legal.backHome')}

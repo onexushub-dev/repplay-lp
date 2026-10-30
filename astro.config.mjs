@@ -6,13 +6,13 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://repplay.app',
-  // The store listings point to repplay.app/privacy and repplay.app/terms, so canonical URLs have no trailing slash.
+  site: 'https://userevi.app',
+  // The store listings point to userevi.app/privacy and userevi.app/terms, so canonical URLs have no trailing slash.
   trailingSlash: 'never',
 
   i18n: {
     defaultLocale: 'pt-BR',
-    locales: ['pt-BR', 'en'],
+    locales: ['pt-BR', 'en', 'es'],
     routing: { prefixDefaultLocale: false },
   },
 
@@ -51,7 +51,7 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'pt-BR',
-        locales: { 'pt-BR': 'pt-BR', en: 'en' },
+        locales: { 'pt-BR': 'pt-BR', en: 'en', es: 'es' },
       },
     }),
   ],

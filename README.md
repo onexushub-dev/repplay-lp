@@ -1,6 +1,6 @@
-# Repplay LP
+# Revi LP
 
-Landing page do Repplay (https://repplay.app), em Astro 7 + Tailwind v4 + TypeScript. Português (BR) na raiz e inglês em `/en`.
+Landing page do Revi (https://userevi.app), em Astro 7 + Tailwind v4 + TypeScript. Português (BR) na raiz, inglês em `/en` e espanhol em `/es`.
 
 ## Requisitos
 
@@ -20,16 +20,16 @@ pnpm preview   # serve a pasta dist
 
 | Pasta | O que tem |
 |---|---|
-| `src/pages` | Rotas. A raiz é pt-BR e `src/pages/en` é o inglês. |
+| `src/pages` | Rotas. A raiz é pt-BR, `src/pages/en` é o inglês e `src/pages/es` é o espanhol. |
 | `src/components` | `HomePage`, `LegalPage` e peças de layout. |
-| `src/content/legal` | Textos de Privacidade e Termos em markdown, por idioma (`pt-br`, `en`). |
+| `src/content/legal` | Textos de Privacidade e Termos em markdown, por idioma (`pt-br`, `en`, `es`). |
 | `src/i18n/ui.ts` | Textos da interface nos dois idiomas. |
 | `src/styles/global.css` | Tokens da marca (Ink, Paper, Amber, Dark amber) e estilo dos textos legais. |
 | `public` | Favicons, manifest, logos e imagem OG copiados do kit de marca. |
 
 ## Marca
 
-Os arquivos vêm de `docs/brand/repplay` no repositório `repplay`. O Âmbar é `#FFB000` e nunca vai sobre fundo claro; nele entra o Âmbar escuro (`#946200`). Paleta em Ink `#0A0A0A`, Branco `#FFFFFF`, Âmbar e Âmbar escuro.
+Os arquivos vêm do kit de marca do Revi (Placar), no mesmo desenho do app. O Âmbar é `#FFB000` e nunca vai sobre fundo claro; nele entra o Âmbar escuro (`#946200`). Paleta em Ink `#0A0A0A`, Branco `#FFFFFF`, Âmbar e Âmbar escuro.
 
 ## Links das lojas
 
@@ -37,7 +37,7 @@ Copie `.env.example` para `.env` e preencha `PUBLIC_APP_STORE_URL` e `PUBLIC_PLA
 
 ## Rotas legais
 
-As lojas apontam para `repplay.app/privacy` e `repplay.app/terms`. Por isso as URLs não têm barra final (`trailingSlash: 'never'`).
+As lojas apontam para `userevi.app/privacy` e `userevi.app/terms`. Por isso as URLs não têm barra final (`trailingSlash: 'never'`).
 
 ## Prints do app
 
