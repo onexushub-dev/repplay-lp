@@ -1,5 +1,5 @@
 import type { Locale } from './ui';
-import { PLAN_PRICES as P } from '../data/plans';
+import { PLAN_PRICES as P, PLAN_PRICES_USD as PU, PLAN_PRICES_USD_ES as PE } from '../data/plans';
 
 export type TestimonialKey = 'marcus' | 'sara' | 'lorenzo' | 'lyandra' | 'victor' | 'yasmin';
 export type TriggerKey = 'tap' | 'gesture' | 'voice' | 'watch' | 'bluetooth' | 'phone';
@@ -93,7 +93,7 @@ const ptBR: HomeCopy = {
     eyebrow: 'Replay para quem joga',
     title: 'Seu lance. De novo.',
     subtitle:
-      'Prenda o celular na grade, jogue à vontade e guarde só a jogada que valeu. Sem cadastro, sem nuvem.',
+      'Apoie o celular, jogue à vontade e guarde só a jogada que valeu. Sem cadastro, sem nuvem.',
     note: 'Grátis para começar · iPhone e Android',
     screen: {
       rec: 'Gravando',
@@ -111,7 +111,7 @@ const ptBR: HomeCopy = {
     steps: [
       {
         title: 'Posicione',
-        body: 'Na grade ou na areia, atrás da linha de fundo. O Repplay mostra o guia da quadra e o nível do horizonte.',
+        body: 'Num ponto firme, de frente para o jogo. O Revi mostra o guia da quadra e o nível do horizonte.',
       },
       {
         title: 'Jogue',
@@ -165,7 +165,7 @@ const ptBR: HomeCopy = {
     title: 'Do lance ao story em dois toques.',
     subtitle: 'Corte no ponto certo, ajuste a velocidade e mande para onde quiser.',
     items: [
-      { title: 'Corte preciso', body: 'Ajuste onde o lance começa e termina, dentro do trecho que o Repplay guardou.' },
+      { title: 'Corte preciso', body: 'Ajuste onde o lance começa e termina, dentro do trecho que o Revi guardou.' },
       { title: 'Velocidade, zoom e giro', body: 'Acelere, desacelere e enquadre o lance do jeito que ele merece.' },
       {
         title: 'Modo Foco',
@@ -178,7 +178,7 @@ const ptBR: HomeCopy = {
   privacy: {
     eyebrow: 'Privacidade',
     title: 'Grava tudo. Guarda só o lance.',
-    body: 'Enquanto você joga, o Repplay mantém só os instantes mais recentes numa memória temporária do celular. O que fica para trás é apagado na hora. Só os lances que você salva permanecem.',
+    body: 'Enquanto você joga, o Revi mantém só os instantes mais recentes numa memória temporária do celular. O que fica para trás é apagado na hora. Só os lances que você salva permanecem.',
     bullets: [
       'Sem conta e sem login',
       'Nenhum vídeo vai para os nossos servidores',
@@ -189,7 +189,7 @@ const ptBR: HomeCopy = {
   },
   sports: {
     title: 'Qualquer esporte. Qualquer quadra.',
-    subtitle: 'Prenda o celular, comece a gravar e jogue. O Repplay não liga para a modalidade.',
+    subtitle: 'Prenda o celular, comece a gravar e jogue. O Revi não liga para a modalidade.',
     credit: 'Fotos e vídeos: Pexels.',
     nav: { region: 'Esportes', prev: 'Esporte anterior', next: 'Próximo esporte', slide: 'Esporte {n} de {total}' },
     items: {
@@ -262,7 +262,7 @@ const ptBR: HomeCopy = {
   },
   testimonials: {
     title: 'Quem já testou conta.',
-    subtitle: 'O que quem jogou com o Repplay mais gostou.',
+    subtitle: 'O que quem jogou com o Revi mais gostou.',
     items: {
       marcus: {
         tag: 'Basquete',
@@ -278,7 +278,7 @@ const ptBR: HomeCopy = {
       },
       sara: {
         tag: 'Beach tennis',
-        quote: 'Adorei o Repplay, é simples de usar. É só levantar os braços e o lance tá salvo.',
+        quote: 'Adorei o Revi, é simples de usar. É só levantar os braços e o lance tá salvo.',
       },
       lyandra: {
         tag: 'Futevôlei',
@@ -286,7 +286,7 @@ const ptBR: HomeCopy = {
       },
       yasmin: {
         tag: 'Beach tennis',
-        quote: 'Gostei demais do Repplay. Sem cadastro e sem mandar vídeo para a nuvem, fico tranquila.',
+        quote: 'Gostei demais do Revi. Sem cadastro e sem mandar vídeo para a nuvem, fico tranquila.',
       },
     },
   },
@@ -295,12 +295,12 @@ const ptBR: HomeCopy = {
     subtitle: 'Sem cadastro para testar. Você só passa pelo pagamento quando quiser liberar tudo.',
     free: {
       name: 'Grátis',
-      price: 'R$ 0',
+      price: P.free,
       period: 'para sempre',
       items: [
         `${P.freeRecordingsPerMonth} gravações por mês`,
         `Full HD, clipes de até ${P.freeClipSeconds}s`,
-        'Todos os gatilhos, menos o relógio',
+        'Todos os jeitos de salvar, menos o relógio',
         'Editor e compartilhamento',
         'Marca d’água; som, velocidade e Foco só dentro do app',
       ],
@@ -337,14 +337,14 @@ const ptBR: HomeCopy = {
         'Clipes acima de 15s, compilação e Apple Watch',
       ],
     },
-    note: 'Valores em reais na loja do Brasil; em outros países a loja mostra o preço local. Cancele quando quiser nas configurações da App Store ou do Google Play. O vídeo exportado no plano Grátis leva a marca d’água do Repplay.',
+    note: 'Valores em reais na loja do Brasil; em outros países a loja mostra o preço local. Cancele quando quiser nas configurações da App Store ou do Google Play. O vídeo exportado no plano Grátis leva a marca d’água do Revi.',
   },
   faq: {
     title: 'Perguntas frequentes',
     items: [
       {
         q: 'Meus vídeos vão para a nuvem?',
-        a: 'Não. Tudo fica no seu celular: o Repplay não tem cadastro nem servidor de vídeos. Só as compras passam por serviços de terceiros (Apple, Google e RevenueCat). Os detalhes estão na Política de Privacidade.',
+        a: 'Não. Tudo fica no seu celular: o Revi não tem cadastro nem servidor de vídeos. Só as compras passam por serviços de terceiros (Apple, Google e RevenueCat). Os detalhes estão na Política de Privacidade.',
       },
       {
         q: 'O app grava o jogo inteiro?',
@@ -352,7 +352,7 @@ const ptBR: HomeCopy = {
       },
       {
         q: 'O celular esquenta? E a bateria?',
-        a: 'Gravar vídeo continuamente exige do aparelho. O Repplay apaga a tela depois de alguns segundos sem toque para poupar bateria e, se o celular esquentar, reduz a qualidade aos poucos (primeiro Full HD a 30 quadros, depois 720p) e avisa na tela. Se esquentar demais, a gravação para para proteger o aparelho. Em dia de sol forte, deixe o celular na sombra.',
+        a: 'Gravar vídeo continuamente exige do aparelho. O Revi apaga a tela depois de alguns segundos sem toque para poupar bateria e, se o celular esquentar, reduz a qualidade aos poucos (primeiro Full HD a 30 quadros, depois 720p) e avisa na tela. Se esquentar demais, a gravação para para proteger o aparelho. Em dia de sol forte, deixe o celular na sombra.',
       },
       {
         q: 'Funciona no iPhone e no Android?',
@@ -364,7 +364,7 @@ const ptBR: HomeCopy = {
       },
       {
         q: 'Qual a diferença entre Grátis, Passe e Pro?',
-        a: 'O Grátis traz 3 gravações por mês, em Full HD, com clipes de até 15 segundos e marca d’água. Som, velocidade e Modo Foco funcionam no editor, mas não vão no vídeo salvo ou enviado, e o app avisa isso antes de exportar. O Passe Avulso libera uma gravação com tudo, sem marca d’água, e não conta nas gravações grátis. O Pro libera gravações ilimitadas, clipes acima de 15 segundos, compilação de clipes, som, velocidade e Foco no vídeo, sem marca d’água, e o gatilho do Apple Watch.',
+        a: 'O Grátis traz 3 gravações por mês, em Full HD, com clipes de até 15 segundos e marca d’água. Som, velocidade e Modo Foco funcionam no editor, mas não vão no vídeo salvo ou enviado, e o app avisa isso antes de exportar. O Passe Avulso libera uma gravação com tudo, sem marca d’água, e não conta nas gravações grátis. O Pro libera gravações ilimitadas, clipes acima de 15 segundos, compilação de clipes, som, velocidade e Foco no vídeo, sem marca d’água, e o Apple Watch.',
       },
       {
         q: 'Como cancelo o Pro?',
@@ -378,10 +378,10 @@ const ptBR: HomeCopy = {
   },
   cta: {
     title: 'Nenhum lance perdido.',
-    subtitle: 'Baixe o Repplay e deixe o celular ligado na quadra. O resto é jogo.',
+    subtitle: 'Baixe o Revi e deixe o celular ligado na quadra. O resto é jogo.',
     legal: 'Disponível para iPhone e Android.',
   },
-  stickyLabel: 'Baixar o Repplay',
+  stickyLabel: 'Baixar o Revi',
 };
 
 const en: HomeCopy = {
@@ -389,7 +389,7 @@ const en: HomeCopy = {
     eyebrow: 'Replay for players',
     title: 'Your play. Again.',
     subtitle:
-      'Clip the phone to the fence, play on, and keep only the point that mattered. No sign-up, no cloud.',
+      'Set the phone down, play on, and keep only the play that mattered. No sign-up, no cloud.',
     note: 'Free to start · iPhone and Android',
     screen: {
       rec: 'Recording',
@@ -407,7 +407,7 @@ const en: HomeCopy = {
     steps: [
       {
         title: 'Position',
-        body: 'On the fence or in the sand, behind the baseline. Repplay shows a court guide and the horizon level.',
+        body: 'Somewhere steady, facing the game. Revi shows a court guide and the horizon level.',
       },
       {
         title: 'Play',
@@ -421,7 +421,7 @@ const en: HomeCopy = {
   },
   triggers: {
     title: 'Save it without taking your eyes off the game.',
-    subtitle: 'Six ways to trigger a play. Use whatever fits your game.',
+    subtitle: 'Six ways to save a play. Use whatever fits your game.',
     items: {
       tap: { title: 'Tap the screen', body: 'The basic one: a tap anywhere saves the play.', tag: 'Free', pro: false },
       gesture: {
@@ -461,7 +461,7 @@ const en: HomeCopy = {
     title: 'From play to story in two taps.',
     subtitle: 'Trim at the right spot, adjust the speed and send it anywhere.',
     items: [
-      { title: 'Precise trim', body: 'Set where the play starts and ends, within the stretch Repplay kept.' },
+      { title: 'Precise trim', body: 'Set where the play starts and ends, within the stretch Revi kept.' },
       { title: 'Speed, zoom and rotate', body: 'Speed it up, slow it down and frame the play the way it deserves.' },
       {
         title: 'Focus Mode',
@@ -474,7 +474,7 @@ const en: HomeCopy = {
   privacy: {
     eyebrow: 'Privacy',
     title: 'Records everything. Keeps only the play.',
-    body: 'While you play, Repplay keeps only the most recent moments in your phone’s temporary memory. What falls behind is deleted on the spot. Only the plays you save stay.',
+    body: 'While you play, Revi keeps only the most recent moments in your phone’s temporary memory. What falls behind is deleted on the spot. Only the plays you save stay.',
     bullets: [
       'No account, no login',
       'No video ever reaches our servers',
@@ -485,7 +485,7 @@ const en: HomeCopy = {
   },
   sports: {
     title: 'Any sport. Any court.',
-    subtitle: 'Mount the phone, start recording and play. Repplay does not care which sport it is.',
+    subtitle: 'Mount the phone, start recording and play. Revi does not care which sport it is.',
     credit: 'Photos and videos: Pexels.',
     nav: { region: 'Sports', prev: 'Previous sport', next: 'Next sport', slide: 'Sport {n} of {total}' },
     items: {
@@ -558,7 +558,7 @@ const en: HomeCopy = {
   },
   testimonials: {
     title: 'Hear it from people who tested it.',
-    subtitle: 'What players liked most about Repplay.',
+    subtitle: 'What players liked most about Revi.',
     items: {
       marcus: {
         tag: 'Basketball',
@@ -574,7 +574,7 @@ const en: HomeCopy = {
       },
       sara: {
         tag: 'Beach tennis',
-        quote: 'Loved Repplay, it is so simple to use. Just raise your arms and the play is saved.',
+        quote: 'Loved Revi, it is so simple to use. Just raise your arms and the play is saved.',
       },
       lyandra: {
         tag: 'Footvolley',
@@ -582,7 +582,7 @@ const en: HomeCopy = {
       },
       yasmin: {
         tag: 'Beach tennis',
-        quote: 'I really like Repplay. No sign-up and no videos sent to the cloud, so I feel at ease.',
+        quote: 'I really like Revi. No sign-up and no videos sent to the cloud, so I feel at ease.',
       },
     },
   },
@@ -591,30 +591,30 @@ const en: HomeCopy = {
     subtitle: 'No sign-up to try it. You only meet a payment screen when you want to unlock everything.',
     free: {
       name: 'Free',
-      price: 'R$ 0',
+      price: PU.free,
       period: 'forever',
       items: [
-        `${P.freeRecordingsPerMonth} recordings per month`,
-        `Full HD, clips up to ${P.freeClipSeconds}s`,
-        'Every trigger except the watch',
+        `${PU.freeRecordingsPerMonth} recordings per month`,
+        `Full HD, clips up to ${PU.freeClipSeconds}s`,
+        'Every way to save a play, except the watch',
         'Editor and sharing',
         'Watermark; sound, speed and Focus stay in the app',
       ],
     },
     pass: {
       name: 'Single Pass',
-      price: P.singlePass,
+      price: PU.singlePass,
       period: 'one recording',
       items: ['One recording with everything unlocked', 'No watermark', 'Sound, speed and Focus in the video', 'No subscription'],
     },
     proMonthly: {
       name: 'Pro Monthly',
-      price: P.proMonthly,
+      price: PU.proMonthly,
       period: 'per month',
       alt: 'Renews monthly, cancel anytime',
-      badge: `${P.trialDays}-day free trial`,
+      badge: `${PU.trialDays}-day free trial`,
       items: [
-        `${P.trialDays}-day free trial`,
+        `${PU.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
         'Clips over 15s, compilations and Apple Watch',
@@ -622,25 +622,25 @@ const en: HomeCopy = {
     },
     proYearly: {
       name: 'Pro Yearly',
-      price: P.proYearly,
+      price: PU.proYearly,
       period: 'per year',
-      alt: `About ${P.proYearlyPerMonth} per month · save ${P.yearlySavingsPercent}%`,
+      alt: `About ${PU.proYearlyPerMonth} per month · save ${PU.yearlySavingsPercent}%`,
       badge: 'Best value',
       items: [
-        `${P.trialDays}-day free trial`,
+        `${PU.trialDays}-day free trial`,
         'Unlimited recordings',
         'No watermark; sound, speed and Focus in the video',
         'Clips over 15s, compilations and Apple Watch',
       ],
     },
-    note: 'Prices in Brazilian reais from the Brazilian store; elsewhere your store shows local pricing. Cancel anytime in your App Store or Google Play settings. Videos exported on the Free plan carry the Repplay watermark.',
+    note: 'Prices in US dollars; your store shows the price in your local currency, with taxes where they apply. Cancel anytime in your App Store or Google Play settings. Videos exported on the Free plan carry the Revi watermark.',
   },
   faq: {
     title: 'Frequently asked questions',
     items: [
       {
         q: 'Do my videos go to the cloud?',
-        a: 'No. Everything stays on your phone: Repplay has no sign-up and no video servers. Only purchases go through third-party services (Apple, Google and RevenueCat). Details are in the Privacy Policy.',
+        a: 'No. Everything stays on your phone: Revi has no sign-up and no video servers. Only purchases go through third-party services (Apple, Google and RevenueCat). Details are in the Privacy Policy.',
       },
       {
         q: 'Does the app record the whole game?',
@@ -648,7 +648,7 @@ const en: HomeCopy = {
       },
       {
         q: 'Does the phone overheat? What about battery?',
-        a: 'Recording video continuously is demanding. Repplay turns the screen off after a few seconds without a touch to save battery and, if the phone warms up, lowers the quality step by step (Full HD at 30 fps first, then 720p) and tells you on screen. If it gets too hot, the recording stops to protect the device. On a sunny day, keep the phone in the shade.',
+        a: 'Recording video continuously is demanding. Revi turns the screen off after a few seconds without a touch to save battery and, if the phone warms up, lowers the quality step by step (Full HD at 30 fps first, then 720p) and tells you on screen. If it gets too hot, the recording stops to protect the device. On a sunny day, keep the phone in the shade.',
       },
       {
         q: 'Does it work on iPhone and Android?',
@@ -660,7 +660,7 @@ const en: HomeCopy = {
       },
       {
         q: 'What is the difference between Free, Pass and Pro?',
-        a: 'Free gives 3 recordings a month, in Full HD, with clips up to 15 seconds and a watermark. Sound, speed and Focus Mode work in the editor but do not make it into the saved or sent video, and the app tells you so before exporting. The Single Pass unlocks one recording with everything, no watermark, and does not count against the free recordings. Pro unlocks unlimited recordings, clips over 15 seconds, compiling clips, sound, speed and Focus in the video, no watermark, and the Apple Watch trigger.',
+        a: 'Free gives 3 recordings a month, in Full HD, with clips up to 15 seconds and a watermark. Sound, speed and Focus Mode work in the editor but do not make it into the saved or sent video, and the app tells you so before exporting. The Single Pass unlocks one recording with everything, no watermark, and does not count against the free recordings. Pro unlocks unlimited recordings, clips over 15 seconds, compiling clips, sound, speed and Focus in the video, no watermark, and the Apple Watch.',
       },
       {
         q: 'How do I cancel Pro?',
@@ -674,10 +674,306 @@ const en: HomeCopy = {
   },
   cta: {
     title: 'No play missed.',
-    subtitle: 'Download Repplay and leave the phone running on the court. The rest is just playing.',
+    subtitle: 'Download Revi and leave the phone running on the court. The rest is just playing.',
     legal: 'Available for iPhone and Android.',
   },
-  stickyLabel: 'Get Repplay',
+  stickyLabel: 'Get Revi',
 };
 
-export const homeCopy: Record<Locale, HomeCopy> = { 'pt-BR': ptBR, en };
+const es: HomeCopy = {
+  hero: {
+    eyebrow: 'Replay para quien juega',
+    title: 'Tu jugada. Otra vez.',
+    subtitle:
+      'Apoya el celular, juega tranquilo y guarda solo la jugada que valió la pena. Sin registro, sin nube.',
+    note: 'Gratis para empezar · iPhone y Android',
+    screen: {
+      rec: 'Grabando',
+      plays: 'Jugadas',
+      buffer: 'Últimos 15s listos',
+      hint: 'Mueve los brazos para guardar',
+      savedTitle: 'Clip #3 guardado',
+      savedVia: 'por gesto · 15s',
+    },
+  },
+  facts: ['Sin registro', 'Todo queda en tu celular', 'Gratis para empezar'],
+  how: {
+    title: 'Graba todo. Guarda lo mejor.',
+    subtitle: 'Tres pasos entre el punto y el story.',
+    steps: [
+      {
+        title: 'Colócalo',
+        body: 'En un punto firme, de frente al juego. Revi muestra la guía de la cancha y el nivel del horizonte.',
+      },
+      {
+        title: 'Juega',
+        body: 'La cámara graba todo el tiempo, pero solo conserva los instantes más recientes. Lo que queda atrás desaparece solo.',
+      },
+      {
+        title: 'Guarda',
+        body: '¿Salió bien? Mueve los brazos, habla, toca o usa el reloj. La jugada llega a tu celular, lista para publicar.',
+      },
+    ],
+  },
+  triggers: {
+    title: 'Guarda sin quitar los ojos del juego.',
+    subtitle: 'Seis formas de guardar una jugada. Usa la que mejor te quede.',
+    items: {
+      tap: { title: 'Toca la pantalla', body: 'Lo básico: un toque en cualquier lugar guarda la jugada.', tag: 'Gratis', pro: false },
+      gesture: {
+        title: 'Brazos arriba',
+        body: 'Levanta los dos brazos y la app la guarda. Funciona con cualquier persona en el cuadro.',
+        tag: 'Gratis',
+        pro: false,
+      },
+      voice: {
+        title: 'Di “guardar”',
+        body: 'Comando de voz procesado en el propio dispositivo. Ningún audio va a la nube.',
+        tag: 'Gratis · iPhone',
+        pro: false,
+      },
+      watch: {
+        title: 'Apple Watch',
+        body: 'Un botón grande en la muñeca. El reloj vibra cuando la jugada se guarda.',
+        tag: 'Pro · iPhone',
+        pro: true,
+      },
+      bluetooth: {
+        title: 'Control Bluetooth',
+        body: 'Usa el botón de un control Bluetooth de cámara o de selfie.',
+        tag: 'Pro',
+        pro: true,
+      },
+      phone: {
+        title: 'Segundo celular',
+        body: 'Convierte otro iPhone en un botón de guardar, a unos metros de la cancha.',
+        tag: 'Pro · iPhone',
+        pro: true,
+      },
+    },
+  },
+  editor: {
+    eyebrow: 'Edición',
+    title: 'De la jugada al story en dos toques.',
+    subtitle: 'Recorta en el punto justo, ajusta la velocidad y envíalo a donde quieras.',
+    items: [
+      { title: 'Corte preciso', body: 'Ajusta dónde empieza y termina la jugada, dentro del tramo que Revi guardó.' },
+      { title: 'Velocidad, zoom y giro', body: 'Acelera, ralentiza y encuadra la jugada como se merece.' },
+      {
+        title: 'Modo Enfoque',
+        body: 'En iPhone, el encuadre sigue la jugada como en una transmisión de TV. Se apaga con un toque.',
+      },
+      { title: 'Galería o compartir', body: 'Guarda en tu galería o envíalo a cualquier app con un toque.' },
+    ],
+    screen: { cut: 'Corte', speed: 'Velocidad', focus: 'Enfoque', zoom: 'Zoom', save: 'Guardar', share: 'Enviar' },
+  },
+  privacy: {
+    eyebrow: 'Privacidad',
+    title: 'Graba todo. Guarda solo la jugada.',
+    body: 'Mientras juegas, Revi mantiene solo los instantes más recientes en una memoria temporal del celular. Lo que queda atrás se borra al instante. Solo permanecen las jugadas que guardas.',
+    bullets: [
+      'Sin cuenta y sin inicio de sesión',
+      'Ningún video llega a nuestros servidores',
+      'Gestos y voz reconocidos en el propio dispositivo',
+    ],
+    link: 'Leer la Política de Privacidad',
+    ring: { center: 'Ahora', label: 'memoria temporal', kept: 'jugada guardada' },
+  },
+  sports: {
+    title: 'Cualquier deporte. Cualquier cancha.',
+    subtitle: 'Apoya el celular, empieza a grabar y juega. A Revi no le importa cuál sea el deporte.',
+    credit: 'Fotos y videos: Pexels.',
+    nav: { region: 'Deportes', prev: 'Deporte anterior', next: 'Siguiente deporte', slide: 'Deporte {n} de {total}' },
+    items: {
+      beachTennis: {
+        title: 'Tenis de playa',
+        body: 'Peloteo corto, pelota rápida, un punto que se va en dos segundos.',
+        alt: 'Dos jugadoras de tenis de playa riendo en la arena, con las raquetas en las manos',
+      },
+      footvolley: {
+        title: 'Futvóley',
+        body: 'Pecho, pie y cabeza: la jugada que nadie alcanzó a ver bien.',
+        alt: 'Jugador de futvóley haciendo una chilena junto a la red',
+      },
+      beachVolley: {
+        title: 'Vóley playa',
+        body: 'Remate, bloqueo y defensa con garra, una y otra vez.',
+        alt: 'Partido de vóley playa en Lloret de Mar, con un jugador saltando a rematar cerca de la red',
+      },
+      tennis: {
+        title: 'Tenis',
+        body: 'Saque, resto y pasada: el punto que define el partido.',
+        alt: 'Tenista sacando en una cancha de arcilla',
+      },
+      padel: {
+        title: 'Pádel',
+        body: 'Rallies contra la pared, bandejas y smashes. El punto que parecía perdido.',
+        alt: 'Jugador de pádel avanzando con la raqueta en una cancha cubierta',
+      },
+      tableTennis: {
+        title: 'Tenis de mesa',
+        body: 'Efecto, reflejos y una pelota que se va en un segundo.',
+        alt: 'Jugador de tenis de mesa en plena jugada, con la pelota frente al rostro',
+      },
+      volleyball: {
+        title: 'Voleibol',
+        body: 'Armado, remate y bloqueo en la cancha cubierta.',
+        alt: 'Jugadoras de voleibol en una cancha cubierta, en el aire durante un ataque',
+      },
+      basketball: {
+        title: 'Básquetbol',
+        body: 'Clavadas, bandejas y triples: la jugada que se vuelve replay.',
+        alt: 'Jugador de básquetbol en el aire durante una clavada en un gimnasio',
+      },
+      handball: {
+        title: 'Balonmano',
+        body: 'Salto, tiro y atajada en una fracción de segundo.',
+        alt: 'Jugador de balonmano en el aire durante un tiro',
+      },
+      futsal: {
+        title: 'Futsal',
+        body: 'Regate rápido, remate fuerte y gol en espacio reducido.',
+        alt: 'Jugador de futsal corriendo con el balón en una cancha cubierta',
+      },
+      societyFootball: {
+        title: 'Fútbol 5',
+        body: 'Un golazo en pasto sintético y una jugada de crack entre amigos.',
+        alt: 'Dos jugadores disputando el balón en un partido de fútbol 5',
+      },
+      snooker: {
+        title: 'Snooker',
+        body: 'La tacada perfecta también merece un replay.',
+        alt: 'Un jugador prepara una tacada en una mesa de billar mientras una mujer lo observa',
+      },
+      any: {
+        title: 'Cualquier deporte',
+        body: 'Si hay un deporte, hay una jugada. Solo apoya el celular y juega.',
+        alt: '',
+      },
+    },
+  },
+  testimonials: {
+    title: 'Lo cuentan quienes lo probaron.',
+    subtitle: 'Lo que más les gustó de Revi a quienes jugaron con la app.',
+    items: {
+      marcus: {
+        tag: 'Básquetbol',
+        quote: 'Qué buena app, cambió mi forma de jugar. Y guardar la jugada con el Apple Watch es genial.',
+      },
+      lorenzo: {
+        tag: 'Fútbol 5',
+        quote: 'Qué idea genial, la uso en cada partido. Editar y publicar es facilísimo.',
+      },
+      victor: {
+        tag: 'Básquetbol',
+        quote: 'Esta app es una maravilla, graba todo y no me pierdo ninguna jugada. Y la memoria del celular nunca se llena.',
+      },
+      sara: {
+        tag: 'Tenis de playa',
+        quote: 'Me encantó Revi, es muy fácil de usar. Solo levantas los brazos y la jugada queda guardada.',
+      },
+      lyandra: {
+        tag: 'Futvóley',
+        quote: 'Qué app increíble, mis videos quedaron con aspecto profesional. El Modo Enfoque sigue la jugada solo.',
+      },
+      yasmin: {
+        tag: 'Tenis de playa',
+        quote: 'Me gustó mucho Revi. Sin registro y sin enviar videos a la nube, estoy tranquila.',
+      },
+    },
+  },
+  plans: {
+    title: 'Empieza gratis. Paga solo si necesitas más.',
+    subtitle: 'Sin registro para probar. Solo ves una pantalla de pago cuando quieres desbloquearlo todo.',
+    free: {
+      name: 'Gratis',
+      price: PE.free,
+      period: 'para siempre',
+      items: [
+        `${PE.freeRecordingsPerMonth} grabaciones por mes`,
+        `Full HD, clips de hasta ${PE.freeClipSeconds}s`,
+        'Todas las formas de guardar, menos el reloj',
+        'Editor y envío',
+        'Marca de agua; sonido, velocidad y Enfoque solo dentro de la app',
+      ],
+    },
+    pass: {
+      name: 'Pase único',
+      price: PE.singlePass,
+      period: 'una grabación',
+      items: ['Una grabación con todo desbloqueado', 'Sin marca de agua', 'Sonido, velocidad y Enfoque en el video', 'Sin suscripción'],
+    },
+    proMonthly: {
+      name: 'Pro mensual',
+      price: PE.proMonthly,
+      period: 'al mes',
+      alt: 'Se renueva cada mes, cancela cuando quieras',
+      badge: `${PE.trialDays} días gratis`,
+      items: [
+        `${PE.trialDays} días gratis para probar`,
+        'Grabaciones ilimitadas',
+        'Sin marca de agua; sonido, velocidad y Enfoque en el video',
+        'Clips de más de 15s, compilación y Apple Watch',
+      ],
+    },
+    proYearly: {
+      name: 'Pro anual',
+      price: PE.proYearly,
+      period: 'al año',
+      alt: `Cerca de ${PE.proYearlyPerMonth} al mes · ahorras ${PE.yearlySavingsPercent}%`,
+      badge: 'Mejor valor',
+      items: [
+        `${PE.trialDays} días gratis para probar`,
+        'Grabaciones ilimitadas',
+        'Sin marca de agua; sonido, velocidad y Enfoque en el video',
+        'Clips de más de 15s, compilación y Apple Watch',
+      ],
+    },
+    note: 'Precios en dólares estadounidenses; tu tienda muestra el precio en tu moneda local, con impuestos donde correspondan. Cancela cuando quieras en los ajustes de la App Store o de Google Play. El video exportado en el plan Gratis lleva la marca de agua de Revi.',
+  },
+  faq: {
+    title: 'Preguntas frecuentes',
+    items: [
+      {
+        q: '¿Mis videos van a la nube?',
+        a: 'No. Todo queda en tu celular: Revi no tiene registro ni servidor de videos. Solo las compras pasan por servicios de terceros (Apple, Google y RevenueCat). Los detalles están en la Política de Privacidad.',
+      },
+      {
+        q: '¿La app graba todo el partido?',
+        a: 'Graba todo el tiempo, pero solo conserva los instantes más recientes en una memoria temporal del celular. Lo que queda atrás se borra. Solo permanecen las jugadas que guardas.',
+      },
+      {
+        q: '¿El celular se calienta? ¿Y la batería?',
+        a: 'Grabar video de forma continua exige mucho al aparato. Revi apaga la pantalla después de unos segundos sin toques para ahorrar batería y, si el celular se calienta, baja la calidad poco a poco (primero Full HD a 30 fps y luego 720p) y te avisa en la pantalla. Si se calienta demasiado, la grabación se detiene para proteger el aparato. En un día de sol, deja el celular a la sombra.',
+      },
+      {
+        q: '¿Funciona en iPhone y en Android?',
+        a: 'En los dos. Algunas funciones son solo para iPhone por ahora: comando de voz, Apple Watch, segundo celular como control y Modo Enfoque.',
+      },
+      {
+        q: '¿Necesito internet?',
+        a: 'No para grabar ni para editar. Internet solo se usa para las compras y cuando envías un video.',
+      },
+      {
+        q: '¿Cuál es la diferencia entre Gratis, Pase y Pro?',
+        a: 'Gratis ofrece 3 grabaciones al mes, en Full HD, con clips de hasta 15 segundos y marca de agua. El sonido, la velocidad y el Modo Enfoque funcionan en el editor, pero no van en el video guardado o enviado, y la app te avisa antes de exportar. El Pase único desbloquea una grabación con todo, sin marca de agua, y no cuenta en las grabaciones gratis. Pro desbloquea grabaciones ilimitadas, clips de más de 15 segundos, compilación de clips, sonido, velocidad y Enfoque en el video, sin marca de agua, y el Apple Watch.',
+      },
+      {
+        q: '¿Cómo cancelo Pro?',
+        a: 'En los ajustes de tu cuenta de Apple o de Google Play. Si cancelas al menos 24 horas antes de que termine la prueba de 7 días, no se te cobra.',
+      },
+      {
+        q: '¿Puedo grabar a otras personas?',
+        a: 'Sí, con cuidado: avísales y, antes de publicar, pide permiso a quien aparezca en el video, sobre todo a los niños. No grabes en vestuarios ni en otros lugares privados.',
+      },
+    ],
+  },
+  cta: {
+    title: 'Ninguna jugada perdida.',
+    subtitle: 'Descarga Revi y deja el celular encendido en la cancha. Lo demás es jugar.',
+    legal: 'Disponible para iPhone y Android.',
+  },
+  stickyLabel: 'Descargar Revi',
+};
+
+export const homeCopy: Record<Locale, HomeCopy> = { 'pt-BR': ptBR, en, es };

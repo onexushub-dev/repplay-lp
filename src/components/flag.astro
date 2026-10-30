@@ -1,6 +1,6 @@
 ---
 interface Props {
-  code: 'br' | 'us';
+  code: 'br' | 'us' | 'es';
   class?: string;
 }
 
@@ -31,6 +31,11 @@ const stars = Array.from({ length: 3 }, (_, row) => Array.from({ length: 4 }, (_
         <polygon points="11,1.6 20,8 11,14.4 2,8" fill="#ffdf00" />
         <circle cx="11" cy="8" r="3.6" fill="#002776" />
         <path d="M7.6 7.1c2.4-.8 5.2-.4 6.9 1.4" stroke="#fff" stroke-width=".7" fill="none" />
+      </>
+    ) : code === 'es' ? (
+      <>
+        <rect width="22" height="16" fill="#aa151b" />
+        <rect y="4" width="22" height="8" fill="#f1bf00" />
       </>
     ) : (
       <>

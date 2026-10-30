@@ -1,22 +1,22 @@
 ---
 title: Termos de Uso
-description: Condições para usar o aplicativo e o site do Repplay, incluindo planos, pagamentos e responsabilidades.
-updated: 2026-10-24
+description: Condições para usar o aplicativo e o site do Revi, incluindo planos, pagamentos e responsabilidades.
+updated: 2026-10-30
 ---
 
 # Termos de Uso
 
-Estes Termos regulam o uso do aplicativo **Repplay** e do site **repplay.app**. Ao baixar, instalar ou usar o Repplay, você declara que leu e concorda com eles. Se não concordar, não use o app.
+Estes Termos regulam o uso do aplicativo **Revi** e do site **userevi.app**. Ao baixar, instalar ou usar o Revi, você declara que leu e concorda com eles. Se não concordar, não use o app.
 
 O tratamento de dados pessoais está descrito na [Política de Privacidade](/privacy), que faz parte destes Termos.
 
 ## 1. Quem somos
 
-O Repplay é oferecido pela **Nexus Hub**, nome fantasia de **Victor Hugo Marques Ltda.**, CNPJ **64.669.130/0001-02**, São Paulo/SP. Contato: [support@repplay.app](mailto:support@repplay.app).
+O Revi é oferecido pela **Nexus Hub**, nome fantasia de **Victor Hugo Marques Ltda.**, CNPJ **64.669.130/0001-02**, São Paulo/SP. Contato: [support@userevi.app](mailto:support@userevi.app).
 
-## 2. O que é o Repplay
+## 2. O que é o Revi
 
-O Repplay usa a câmera do seu celular, preso à grade, a um tripé ou a outro apoio, para manter uma gravação temporária dos últimos instantes de um jogo. Quando você aciona um gatilho (toque na tela, gesto, voz, controle Bluetooth, relógio ou outro celular), o app salva o lance recente no seu aparelho, e você pode editar, exportar e compartilhar.
+O Revi usa a câmera do seu celular, preso à grade, a um tripé ou a outro apoio, para manter uma gravação temporária dos últimos instantes de um jogo. Quando você aciona um gatilho (toque na tela, gesto, voz, controle Bluetooth, relógio ou outro celular), o app salva o lance recente no seu aparelho, e você pode editar, exportar e compartilhar.
 
 **Suas gravações ficam no seu celular.** Nós não as recebemos nem as armazenamos.
 
@@ -43,9 +43,9 @@ Concedemos a você uma licença **pessoal, limitada, não exclusiva, intransfer�
 
 ## 6. Seu conteúdo e suas gravações
 
-As gravações e os lances **pertencem a você** (ou a quem tiver os direitos sobre eles). Como o Repplay não recebe esse conteúdo, **não adquirimos nenhum direito sobre ele**.
+As gravações e os lances **pertencem a você** (ou a quem tiver os direitos sobre eles). Como o Revi não recebe esse conteúdo, **não adquirimos nenhum direito sobre ele**.
 
-Os vídeos exportados podem incluir elementos gráficos do Repplay, como o logotipo. Você deve preservá-los quando eles fizerem parte do vídeo exportado, e pode compartilhar o conteúdo à vontade, observando os itens abaixo.
+Os vídeos exportados podem incluir elementos gráficos do Revi, como o logotipo. Você deve preservá-los quando eles fizerem parte do vídeo exportado, e pode compartilhar o conteúdo à vontade, observando os itens abaixo.
 
 ## 7. Uso responsável e segurança
 
@@ -61,13 +61,13 @@ Você responde pelo que grava, edita e compartilha com o app.
 
 ## 8. Limites técnicos e ausência de garantia de captura
 
-O Repplay depende do aparelho, do sistema operacional, da bateria, do espaço livre, da temperatura (o app pode reduzir a qualidade sozinho para evitar superaquecimento), da posição do celular e do funcionamento de gatilhos como gesto, voz, relógio e controle, que **podem falhar ou não reconhecer um comando**.
+O Revi depende do aparelho, do sistema operacional, da bateria, do espaço livre, da temperatura (o app pode reduzir a qualidade sozinho para evitar superaquecimento), da posição do celular e do funcionamento de gatilhos como gesto, voz, relógio e controle, que **podem falhar ou não reconhecer um comando**.
 
-Por isso **não garantimos** que todo lance seja capturado, que a imagem tenha determinada qualidade, nem que o app funcione sem interrupções ou erros. **Não use o Repplay como única fonte de registro** em situações em que perder um vídeo possa causar dano relevante, como arbitragem oficial, provas ou competições com consequências. Faça cópias do que for importante, exportando para a galeria ou para outro local.
+Por isso **não garantimos** que todo lance seja capturado, que a imagem tenha determinada qualidade, nem que o app funcione sem interrupções ou erros. **Não use o Revi como única fonte de registro** em situações em que perder um vídeo possa causar dano relevante, como arbitragem oficial, provas ou competições com consequências. Faça cópias do que for importante, exportando para a galeria ou para outro local.
 
 ## 9. Propriedade intelectual
 
-O app, o site, o nome e o logotipo **Repplay**, o design, os textos e o código são de propriedade da Nexus Hub ou licenciados a ela e protegidos pela legislação. Estes Termos não transferem nenhum direito, além da licença de uso do item 4. Você não pode usar a marca Repplay de forma que sugira patrocínio ou parceria sem autorização por escrito.
+O app, o site, o nome e o logotipo **Revi**, o design, os textos e o código são de propriedade da Nexus Hub ou licenciados a ela e protegidos pela legislação. Estes Termos não transferem nenhum direito, além da licença de uso do item 4. Você não pode usar a marca Revi de forma que sugira patrocínio ou parceria sem autorização por escrito.
 
 ## 10. Serviços de terceiros
 
@@ -88,11 +88,11 @@ Nada nestes Termos limita direitos que você tenha por lei.
 
 ## 13. Suspensão e encerramento
 
-Você pode parar de usar o Repplay a qualquer momento, desinstalando o app e cancelando assinaturas ativas na loja. Podemos suspender ou encerrar o seu acesso às funções pagas se houver violação grave destes Termos, fraude ou exigência legal, dando a você a chance de se explicar quando for razoável.
+Você pode parar de usar o Revi a qualquer momento, desinstalando o app e cancelando assinaturas ativas na loja. Podemos suspender ou encerrar o seu acesso às funções pagas se houver violação grave destes Termos, fraude ou exigência legal, dando a você a chance de se explicar quando for razoável.
 
 ## 14. Alterações nestes Termos
 
-Podemos atualizar estes Termos. A versão vigente fica em [repplay.app/terms](/terms), com a data da última atualização. Em mudanças relevantes, avisaremos no app ou no site com antecedência razoável. Se você continuar usando o app após a vigência da nova versão, ela passa a valer para você. Se não concordar, deixe de usar o app e cancele eventuais assinaturas.
+Podemos atualizar estes Termos. A versão vigente fica em [userevi.app/terms](/terms), com a data da última atualização. Em mudanças relevantes, avisaremos no app ou no site com antecedência razoável. Se você continuar usando o app após a vigência da nova versão, ela passa a valer para você. Se não concordar, deixe de usar o app e cancele eventuais assinaturas.
 
 ## 15. Lei aplicável e foro
 
@@ -100,8 +100,8 @@ Estes Termos são regidos pelas **leis do Brasil**. Fica eleito o foro do **domi
 
 ## 16. Disposições gerais
 
-Se alguma parte destes Termos for considerada inválida, as demais continuam em vigor. A tolerância quanto a um descumprimento não significa renúncia a direitos. Estes Termos, com a Política de Privacidade, formam o acordo completo entre você e nós sobre o uso do Repplay.
+Se alguma parte destes Termos for considerada inválida, as demais continuam em vigor. A tolerância quanto a um descumprimento não significa renúncia a direitos. Estes Termos, com a Política de Privacidade, formam o acordo completo entre você e nós sobre o uso do Revi.
 
 ## 17. Contato
 
-Dúvidas, suporte e reclamações: [support@repplay.app](mailto:support@repplay.app).
+Dúvidas, suporte e reclamações: [support@userevi.app](mailto:support@userevi.app).
